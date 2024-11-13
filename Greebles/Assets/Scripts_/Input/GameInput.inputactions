@@ -1,0 +1,82 @@
+{
+    "name": "GameInput",
+    "maps": [
+        {
+            "name": "Gameplay",
+            "id": "57496d2a-ab17-4f30-acc8-0b09d97e891b",
+            "actions": [
+                {
+                    "name": "Game_Interaction",
+                    "type": "Button",
+                    "id": "54acfb14-ed06-4d0f-81e1-7829cfef50d1",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Game_Move",
+                    "type": "Button",
+                    "id": "a006d76d-3972-43b5-ac31-8f8a82ae254b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b9b33d7f-c20a-46ee-a30f-6a8ae738f6ec",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "MultiTap(tapDelay=0.2),Tap",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Game_Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5ba57e41-a146-4d20-8506-b267123658c9",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Game_Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "828eb728-670b-41c6-89f6-035359a0c258",
+            "actions": [
+                {
+                    "name": "UI_Interaction",
+                    "type": "Button",
+                    "id": "29ffd165-15b7-4293-9679-9f061b318d48",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "82ef0e5e-f112-46ee-a1d8-15a8f87ed072",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI_Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
