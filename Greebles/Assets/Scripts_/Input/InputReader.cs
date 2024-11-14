@@ -1,7 +1,4 @@
-/* using System.Numerics; */
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Interactions;
 
@@ -12,15 +9,16 @@ public enum InputPhase
     Cancled
 }
 
-[CreateAssetMenu(fileName = "New InputReader", menuName = "Input/InputReader")]
 public class InputReader : MonoBehaviour, GameInput.IGameplayActions, GameInput.IUIActions
 {
+    private static InputReader instance;
+
     private GameInput _gameInput;
 
-    public delegate void OnGameInput_Single(Vector3 _target);
+    public delegate void OnGameInput_Single(InteractableObject _target, Vector3 _position);
     public static event OnGameInput_Single onGameInput_SingleClick;
 
-    public delegate void OnGameInput_Double(Vector3 _target);
+    public delegate void OnGameInput_Double(InteractableObject _target, Vector3 _position);
     public static event OnGameInput_Double onGameInput_DoubleClick;
 
     public delegate void OnGameInput_Move(InputPhase phase, Vector3 _target);
@@ -31,8 +29,18 @@ public class InputReader : MonoBehaviour, GameInput.IGameplayActions, GameInput.
 
     private Camera _cam;
     private Vector3 _targetPosition;
+    private InteractableObject _targetInteractable;
 
     void OnEnable(){
+        if (instance == null){
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         if (_gameInput == null)
         {
             _gameInput = new GameInput();
@@ -68,10 +76,10 @@ public class InputReader : MonoBehaviour, GameInput.IGameplayActions, GameInput.
         if (context.performed){
             RayCastMouseHit();
             if (context.interaction is MultiTapInteraction){
-                    onGameInput_DoubleClick?.Invoke(_targetPosition);
+                    onGameInput_DoubleClick?.Invoke(_targetInteractable, _targetPosition);
                 }else
                 {
-                    onGameInput_SingleClick?.Invoke(_targetPosition);
+                    onGameInput_SingleClick?.Invoke(_targetInteractable, _targetPosition);
                 }
             if (context.interaction is HoldInteraction)
             {
@@ -102,13 +110,16 @@ public class InputReader : MonoBehaviour, GameInput.IGameplayActions, GameInput.
         RaycastHit _hit;
 
         if (Physics.Raycast(_ray, out _hit, 100)){
-            // TO DO: Adjust so Buttons are excluded
 
-            _targetPosition = _hit.point;
+            _targetInteractable = _hit.transform.GetComponent<InteractableObject>();
+
+            if (_targetInteractable != null)
+            {
+                _targetPosition = _hit.point;
+
+                /* _targetInteractable.Interact(); */
+            }
+
         }
-
-        /* _targetPosition = _cam.ScreenToWorldPoint(Input.mousePosition); */
-
-        /* return Vec; */
     }
 }
