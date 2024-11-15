@@ -580,6 +580,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &176058319 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4520437889887766936, guid: 320262383c12bae40a9b9ab27a582290, type: 3}
+  m_PrefabInstance: {fileID: 1492905774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &220774227
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,7 +908,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secretObject: {fileID: 602927317658524212}
+  riddleComponents:
+  - {fileID: 176058319}
+  - {fileID: 1988837163}
+  - {fileID: 1945948053}
   solved: 0
+  solvedCount: 0
+  timerEnabled: 1
+  timerActive: 0
+  timer: 10
+  timerMax: 10
 --- !u!4 &258324632
 Transform:
   m_ObjectHideFlags: 0
@@ -3499,6 +3513,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935365030}
   m_CullTransparentMesh: 1
+--- !u!1 &1945948053 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4520437889887766936, guid: 320262383c12bae40a9b9ab27a582290, type: 3}
+  m_PrefabInstance: {fileID: 1384240007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1988837163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4520437889887766936, guid: 320262383c12bae40a9b9ab27a582290, type: 3}
+  m_PrefabInstance: {fileID: 1004125139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1992154015
 GameObject:
   m_ObjectHideFlags: 0

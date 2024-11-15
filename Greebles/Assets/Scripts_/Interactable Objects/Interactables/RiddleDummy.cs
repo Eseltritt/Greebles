@@ -10,6 +10,7 @@ public class RiddleDummy : InteractableObject
     public override void Interact()
     {
         base.Interact();
+        gameObject.SetActive(false);
         
         Debug.Log("Riddle");
     }
