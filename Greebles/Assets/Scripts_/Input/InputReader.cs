@@ -109,7 +109,7 @@ public class InputReader : MonoBehaviour, GameInput.IGameplayActions, GameInput.
         Ray _ray = _cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit _hit;
 
-        if (Physics.Raycast(_ray, out _hit, 100)){
+        if (Physics.Raycast(_ray, out _hit, Mathf.Infinity)){
 
             _targetInteractable = _hit.transform.GetComponent<InteractableObject>();
 

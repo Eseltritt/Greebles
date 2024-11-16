@@ -8,9 +8,9 @@ public class ScratchObject : InteractableObject
     public override InteractableType interactionType => _interactionType;
 
 
-    public override void Interact()
+    public override void Catinteraction()
     {
-        base.Interact();
+        base.Catinteraction();
 
         // TO DO: Implement interaction effect
 

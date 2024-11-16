@@ -8,14 +8,17 @@ public class Greebles : InteractableObject
 
     public override InteractableType interactionType => _interactionType;
 
-    public float testFloat = 5.3f;
-
-    public override void Interact()
+    public override void Catinteraction()
     {
-        base.Interact();
+        base.Catinteraction();
 
         // TO DO: Implement interaction effect
+
+        // Play Animation
+        // Destroy Object
         
         Debug.Log("Die, filthy Greeble");
     }
+
+
 }

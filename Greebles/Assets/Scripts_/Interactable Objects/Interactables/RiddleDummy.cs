@@ -7,9 +7,9 @@ public class RiddleDummy : InteractableObject
     [SerializeField] private InteractableType _interactionType;
     public override InteractableType interactionType => _interactionType;
 
-    public override void Interact()
+    public override void Catinteraction()
     {
-        base.Interact();
+        base.Catinteraction();
         gameObject.SetActive(false);
         
         Debug.Log("Riddle");

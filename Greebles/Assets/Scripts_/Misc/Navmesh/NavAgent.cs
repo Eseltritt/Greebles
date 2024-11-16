@@ -9,7 +9,7 @@ public abstract class NavAgent : MonoBehaviour
     protected bool hasTarget;
     protected Vector3 targetPosition;
     protected NavMeshAgent agent;
-    protected abstract float interactionDistance { get; }
+    /* protected abstract float interactionDistance { get; } */
 
     public virtual void Start(){
         agent = gameObject.GetComponent<NavMeshAgent>();
@@ -18,6 +18,7 @@ public abstract class NavAgent : MonoBehaviour
     public virtual void Update(){
         if (hasTarget)
         {
+            
             if (IsDistanceReached())
                 DoActionOnArrival();
         }
@@ -34,12 +35,13 @@ public abstract class NavAgent : MonoBehaviour
         return false;
     }
 
-    public virtual void MoveToDestination(Vector3 _destination, float _speed){
+    public void MoveToDestination(Vector3 _destination, float _speed){
         agent.destination = _destination;
         agent.speed = _speed;
     }
 
     public virtual void DoActionOnArrival(){
+        agent.speed = 0;
         agent.isStopped = true;
     }
 }
