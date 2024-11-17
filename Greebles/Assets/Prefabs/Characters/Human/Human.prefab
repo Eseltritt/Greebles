@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 4844321189366387497}
   - component: {fileID: 1272217807549580309}
   - component: {fileID: 6986451424646741991}
+  - component: {fileID: 6201534232405318145}
   m_Layer: 0
   m_Name: Human
-  m_TagString: Untagged
+  m_TagString: Human
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,7 +105,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -126,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d36ceaf534c10d947b5ca71a540ae13d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mySpeed: 0
 --- !u!195 &1272217807549580309
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -136,13 +138,13 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 20
-  m_Acceleration: 30
+  m_Speed: 12
+  m_Acceleration: 20
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 5
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
@@ -169,6 +171,40 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6201534232405318145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461841519326431446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987d323a2f1f4d443b40a9b586c73621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 971d99ee6100af74a9c5952c4217a84d, type: 2}
+  response_0:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4844321189366387497}
+        m_TargetAssemblyTypeName: HumanAI, Assembly-CSharp
+        m_MethodName: OnHitObjectMisplaced
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  response_1:
+    m_PersistentCalls:
+      m_Calls: []
+  response_2:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8022455954396201570
 GameObject:
   m_ObjectHideFlags: 0

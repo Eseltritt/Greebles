@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.Collections;
 using Unity.VisualScripting;
 using System.Data.Common;
+using UnityEngine.AI;
 
 enum MoveState
 {
@@ -27,7 +28,7 @@ public class HumanAI : NavAgent
     private List<InteractableObject> _misplacedKnown = new List<InteractableObject>();
 
     private InteractableObject _targetInteractable;
-    private Transform _interactableHoldTransform;
+    [SerializeField] private Transform _interactableHoldTransform;
 
     private bool _holdingInteractable = false;
     private bool _hasInteractableTarget = false;
@@ -263,8 +264,8 @@ public class HumanAI : NavAgent
 
     public void PickUpInteractable(){
         _targetInteractable.transform.parent = _interactableHoldTransform;
-
         _targetInteractable.transform.localPosition = Vector3.zero;
+        _targetInteractable.GetComponent<Rigidbody>().AddForce(Vector3.zero);
 
         _holdingInteractable = true;
     }

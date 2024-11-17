@@ -60,13 +60,14 @@ public class HitObject : InteractableObject
     {
         base.Catinteraction();
 
+        Debug.Log("interacted");
         AddForce();
 
         _isMisplaced = true;
     }
 
     private void AddForce(){
-        _rigidBody.AddForce(forceDirection, ForceMode.Impulse);
+        _rigidBody.AddForce(forceDirection, ForceMode.VelocityChange);
         OnHitObjectMisplaced?.Raise_WithoutParam(this);
     }
 
