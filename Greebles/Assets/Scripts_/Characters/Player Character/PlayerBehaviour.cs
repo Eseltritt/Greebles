@@ -7,11 +7,16 @@ public class PlayerBehaviour : NavAgent
     private InteractableObject _targetInteractable;
 
     [SerializeField]
-    private float _moveSpeed = 2;
-    [SerializeField]
-    private float _runSpeed = 5;
+    private float _runSpeed;
 
     #region Init
+
+    public override void Start()
+    {
+        base.Start();
+
+        _runSpeed = speed * 4;
+    }
 
     void OnEnable(){
         InputReader.onGameInput_DoubleClick += DoubleClickRegistered;
@@ -53,7 +58,7 @@ public class PlayerBehaviour : NavAgent
             targetPosition = _clickTarget.transform.position;
         }
         
-        MoveToDestination(targetPosition, _runSpeed);
+        MoveToDestination(_runSpeed);
     }
 
     private void SingleClickRegistered(InteractableObject _clickTarget, Vector3 _targetPosition){
@@ -76,7 +81,7 @@ public class PlayerBehaviour : NavAgent
             targetPosition = _clickTarget.transform.position;
         }
         
-        MoveToDestination(targetPosition, _moveSpeed);
+        MoveToDestination(speed);
     }
 
     #endregion

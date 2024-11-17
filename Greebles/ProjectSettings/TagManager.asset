@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 3
   tags:
   - HitObject
+  - HumanMoveTarget
+  - Interactable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
   - DoorTarget

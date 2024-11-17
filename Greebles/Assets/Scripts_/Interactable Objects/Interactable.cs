@@ -11,6 +11,10 @@ public abstract class InteractableObject : MonoBehaviour/* , IInteractable */
 {
     public abstract InteractableType interactionType {get;}
 
+    public virtual void Start(){
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
+    }
+
     public virtual void Catinteraction()
     {
         // TO DO: Implement general interaction effect

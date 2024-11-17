@@ -19,11 +19,15 @@ public class HitObject : InteractableObject
 
     #region Public Variables
 
+    #region Events
+        [SerializeField] private GameEvent OnHitObjectMisplaced;
+    #endregion
+
     public Vector3 InitialPosition { get {return _initialPosition;} }
 
     public Quaternion InitialRotation { get {return _intialRotation;} }
 
-    public bool IsMisplaced { get {return _isMisplaced;} } // To use for Character to determine if an object must be replaced
+    public bool IsMisplaced { get {return _isMisplaced;} set{} } // To use for Character to determine if an object must be replaced
 
     #endregion
 
@@ -31,7 +35,9 @@ public class HitObject : InteractableObject
 
     #region Init
 
-    private void Start(){
+    public override void Start(){
+        base.Start();
+
         _initialPosition = gameObject.transform.position;
         _intialRotation = transform.rotation;
 
@@ -55,10 +61,13 @@ public class HitObject : InteractableObject
         base.Catinteraction();
 
         AddForce();
+
+        _isMisplaced = true;
     }
 
     private void AddForce(){
         _rigidBody.AddForce(forceDirection, ForceMode.Impulse);
+        OnHitObjectMisplaced?.Raise_WithoutParam(this);
     }
 
     #endregion
