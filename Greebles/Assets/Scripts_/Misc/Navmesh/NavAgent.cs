@@ -8,8 +8,8 @@ public abstract class NavAgent : MonoBehaviour
     protected bool hasTarget;
     protected Vector3 targetPosition; // Set this variable to target position in order to move the 
     protected NavMeshAgent agent;
-
     protected float speed;
+
     /* protected abstract float interactionDistance { get; } */
 
     public virtual void Start(){

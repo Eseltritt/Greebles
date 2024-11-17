@@ -15,6 +15,8 @@ enum MoveState
 
 public class HumanAI : NavAgent
 {
+    #region Private Variables
+
     private MoveState _state = MoveState.Idle;
 
     private List<Transform> _RoomMoveTargets = new List<Transform>();
@@ -24,13 +26,19 @@ public class HumanAI : NavAgent
     private List<InteractableObject> _hitObjectsinSight = new List<InteractableObject>();
     private List<InteractableObject> _misplacedKnown = new List<InteractableObject>();
 
-    /* private bool _hasHitObjectInSight = false; */
-
     private InteractableObject _targetInteractable;
-    [SerializeField] private Transform _interactableHoldTransform;
+    private Transform _interactableHoldTransform;
 
     private bool _holdingInteractable = false;
     private bool _hasInteractableTarget = false;
+
+    #endregion
+    
+    #region Public Variables
+
+    [SerializeField] private float mySpeed;
+        
+    #endregion
 
     #region Init
 
@@ -56,31 +64,15 @@ public class HumanAI : NavAgent
 
     public override void Update(){
         base.Update();
-
-        /* while (_hasHitObjectInSight)
-        {
-            
-        } */
-        /* if(!_hasInteractableTarget)
-            StateUpdate(); */
-
-        /* if (HasMisplacedTargets() && !_hasInteractableTarget)
-            AssigneInteractableTarget(); */
     }
 
     #region AI
 
     void StateUpdate(){
-        /* if (_hasInteractableTarget)
-            return; */
         UpdateSeenMisplaced();
 
         if(HasSeenMisplacedObjects()){
             _state = MoveState.Clean;
-            /* if (_hasInteractableTarget)
-                    _state = MoveState.Place;
-                else
-                    _state = MoveState.Collect; */
         } else
             _state = MoveState.Idle;
 
@@ -186,22 +178,7 @@ public class HumanAI : NavAgent
                     AssigneInteractableTarget();
                 }
             break;
-            /* case MoveState.Collect:
-                if (!_hasInteractableTarget)
-                    AssigneInteractableTarget();
-            break;
-            case MoveState.Place:
-                AssignInteractableInitialPosition();
-            break; */
         }
-
-        /* if (HasMisplacedTargets()){
-            _state = MoveState.Collect;
-            AssigneInteractableTarget();
-        }else{
-            _state = MoveState.Idle;
-            AssigneDefaultTarget();
-        } */
 
         hasTarget = true;
         agent.isStopped = false;
@@ -236,9 +213,7 @@ public class HumanAI : NavAgent
     }
 
     private void AssigneInteractableTarget()
-    {
-        /* _interactableTarget = _misplacedObjects.Remove(); */
-        
+    {      
         targetPosition = _targetInteractable.transform.position;
 
         hasTarget = true;
@@ -260,9 +235,8 @@ public class HumanAI : NavAgent
     public override void DoActionOnArrival()
     {
         base.DoActionOnArrival();
-        Debug.Log("arrived at location");
-        // TO DO: play pick up animation
 
+        // TO DO: play pick up animation
 
         switch (_state)
         {
@@ -271,10 +245,8 @@ public class HumanAI : NavAgent
                 StateUpdate();
             break;
             case MoveState.Clean:
-                Debug.Log("State = Clean");
                 if (!_holdingInteractable)
                 {
-                    Debug.Log("holding Interactable");
                     PickUpInteractable();
                     AssignInteractableInitialPosition();
                 }else{
@@ -283,42 +255,8 @@ public class HumanAI : NavAgent
 
                     StateUpdate();
                 }
-                
-                /* targetPosition = _interactableTarget.GetComponent<HitObject>().InitialPosition;
-                MoveToDestination(speed); */
-            /* break;
-            case MoveState.Collect:
-                PickUpInteractable();
-                AssignInteractableInitialPosition(); */
-                /* targetPosition = _interactableTarget.GetComponent<HitObject>().InitialPosition;
-                MoveToDestination(speed); */
-            /* break;
-            case MoveState.Place:
-                PlaceInteractable(); */
-
-                /* _targetInteractable = null;
-                _hasInteractableTarget = false;
-                hasTarget = false; */
             break;
         }
-
-        /* if (_state == MoveState.Idle){
-            
-        }else if(_state == MoveState.Collect){
-            PickUpInteractable();
-            _state = MoveState.Place;
-
-            targetPosition = _interactableTarget.GetComponent<HitObject>().InitialPosition;
-            MoveToDestination(speed);
-        }else{
-            PlaceInteractable();
-
-            _interactableTarget = null;
-            _hasInteractableTarget = false;
-            hasTarget = false;
-
-            AssignNewTarget();
-        } */
 
         StateUpdate();
     }
