@@ -122,3 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionType: 2
+  riddleOneCount: {fileID: 11400000, guid: 22ff22a4c607eba49a7058c114155b94, type: 2}

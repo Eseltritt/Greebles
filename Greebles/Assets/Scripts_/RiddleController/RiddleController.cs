@@ -2,12 +2,14 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 
+
+// RiddleController is a script that manages the riddles in the game. It keeps track of the riddle components and the secret object that is revealed when the riddle is solved.
 public class RiddleController : MonoBehaviour
 {
     [SerializeField] GameObject secretObject;
-    [SerializeField] List<GameObject> riddleComponents = new List<GameObject>();
     public bool solved = false;
     public int solvedCount = 0;
+    public int solvedCountMax = 3;
     public bool timerEnabled = false;
     public bool timerActive = false;
     public float timer;
@@ -39,33 +41,22 @@ public class RiddleController : MonoBehaviour
         else
         {
             HideSecret();
-        }
-        solvedCount = 0;
-        foreach (GameObject component in riddleComponents)
-        {
-            if (component.activeSelf)
-            {
-                solved = false;                
-            } else
-            {
-                solvedCount++;
-                if(solvedCount >= riddleComponents.Count)
-                {
-                    solved = true;
-                    Debug.Log("Riddle solved");
-                    RevealSecret();
-                    timerActive = false;
-                    return;
-                }
-            }
-            if (!component.activeSelf && timerEnabled && !timerActive)
-            {
-                RiddleTimerStart();
-                Debug.Log("Timer started");
-            }
-        }
+        }     
+    }
 
-        
+    public void CountUp()
+    {
+        RiddleTimerStart();
+        solvedCount++;
+        Debug.Log("Riddle count: " + solvedCount);
+        if (solvedCount >= solvedCountMax)
+        {
+            solved = true;
+            Debug.Log("Riddle solved");
+            RevealSecret();
+            timerActive = false;
+            return;
+        }
     }
 
     // Reveal the secret object/reward for solving the riddle
@@ -86,10 +77,11 @@ public class RiddleController : MonoBehaviour
         if (!timerActive)
         {
             timerActive = true;
+            timer = timerMax;
         }
-        timer = timerMax;
+        
     }
-
+    //Updates the timer and checks if it is up. If it is, the riddle is reset.
     private void RiddleTimerUpdate()
     {
         if (timerActive)
@@ -105,13 +97,14 @@ public class RiddleController : MonoBehaviour
         }
     }
 
+    //Resets the riddle
     private void ResetRiddle()
     {
-        Debug.Log("Riddle reset");
-        foreach (GameObject component in riddleComponents)
+        solvedCount = 0;
+        for (int i = 0; i < gameObject.transform.childCount; i++)
         {
-            component.SetActive(true);
-
+            gameObject.transform.GetChild(i).gameObject.SetActive(true);
         }
+        Debug.Log("Riddle reset");
     }
 }
