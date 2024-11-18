@@ -7,7 +7,6 @@ public class PlayerBehaviour : NavAgent
     private InteractableObject _targetInteractable;
 
     [SerializeField]
-    private float mySpeed = 15;
     private float _runSpeed;
 
     #region Init
@@ -17,7 +16,7 @@ public class PlayerBehaviour : NavAgent
         base.Start();
 
 
-        _runSpeed = mySpeed * 3;
+        _runSpeed = speed * 3;
     }
 
     void OnEnable(){
@@ -83,7 +82,7 @@ public class PlayerBehaviour : NavAgent
             targetPosition = _clickTarget.transform.position;
         }
         
-        MoveToDestination(mySpeed);
+        MoveToDestination(speed);
     }
 
     #endregion

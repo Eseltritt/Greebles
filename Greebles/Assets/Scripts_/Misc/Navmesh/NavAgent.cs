@@ -5,6 +5,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class NavAgent : MonoBehaviour
 {
+    private float stoppingDistance;
     protected bool hasTarget;
     protected Vector3 targetPosition; // Set this variable to target position in order to move the 
     protected NavMeshAgent agent;
@@ -14,22 +15,24 @@ public abstract class NavAgent : MonoBehaviour
 
     public virtual void Start(){
         agent = gameObject.GetComponent<NavMeshAgent>();
-
-        speed = agent.speed;
+        if (stoppingDistance == 0)
+            stoppingDistance = agent.stoppingDistance;
+        else
+            agent.stoppingDistance = stoppingDistance;
     }
 
     public virtual void Update(){
         if (hasTarget)
         {
-            if (IsDistanceReached())
+            if (NavPathDestinationReached())
                 DoActionOnArrival();
         }
             
     }
 
-    private bool IsDistanceReached()
+    protected bool NavPathDestinationReached()
     {
-        if (agent.remainingDistance <= agent.stoppingDistance && agent.remainingDistance != 0)
+        if (agent.remainingDistance <= stoppingDistance && agent.remainingDistance != 0)
             return true;
         
         return false;

@@ -240,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 5603339333923168149}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.95, y: 8.843, z: -7.11}
+  m_LocalPosition: {x: 30.3, y: 8.843, z: -7.11}
   m_LocalScale: {x: 1, y: 18.070068, z: 7.138286}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -382,8 +382,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6714925423285856550}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.3, y: 0, z: -17.2}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -22.300003, y: 0, z: -17.200005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -403,12 +403,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 1
   m_AgentTypeID: -1372625422
-  m_StartPoint: {x: 35.960106, y: 0, z: 9.720147}
-  m_EndPoint: {x: 18.554987, y: 0, z: 10.355698}
+  m_StartPoint: {x: 55.354977, y: 0, z: 9.720145}
+  m_EndPoint: {x: 16.914284, y: 0, z: 10.355697}
   m_StartTransform: {fileID: 0}
   m_EndTransform: {fileID: 0}
   m_Activated: 1
-  m_Width: 3.3449895
+  m_Width: 5
   m_CostModifier: 1
   m_IsOverridingCost: 0
   m_Bidirectional: 1
@@ -428,12 +428,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 1
   m_AgentTypeID: 0
-  m_StartPoint: {x: 35.960106, y: 0, z: 9.720147}
-  m_EndPoint: {x: 18.554987, y: 0, z: 10.355698}
+  m_StartPoint: {x: 55.53452, y: 0, z: 9.720148}
+  m_EndPoint: {x: 16.73721, y: 0, z: 10.355699}
   m_StartTransform: {fileID: 0}
   m_EndTransform: {fileID: 0}
   m_Activated: 1
-  m_Width: 3.3449895
+  m_Width: 5
   m_CostModifier: 1
   m_IsOverridingCost: 0
   m_Bidirectional: 1
@@ -452,13 +452,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SerializedVersion: 1
-  m_AgentTypeID: 0
-  m_StartPoint: {x: 0, y: 0, z: -2.5}
-  m_EndPoint: {x: 0, y: 0, z: 2.5}
+  m_AgentTypeID: -334000983
+  m_StartPoint: {x: 16.83153, y: 0, z: 10.1741705}
+  m_EndPoint: {x: 55.201534, y: 0, z: 9.9953575}
   m_StartTransform: {fileID: 0}
   m_EndTransform: {fileID: 0}
   m_Activated: 1
-  m_Width: 0
+  m_Width: 5
   m_CostModifier: 1
   m_IsOverridingCost: 0
   m_Bidirectional: 1
