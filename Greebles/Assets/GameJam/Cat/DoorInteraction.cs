@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Attach the script to the secret door. which has the animator to move the door to the side. 
+/// </summary>
 public class DoorInteraction : MonoBehaviour
 {
     private Animator doorAnimator; // Animator for the door
