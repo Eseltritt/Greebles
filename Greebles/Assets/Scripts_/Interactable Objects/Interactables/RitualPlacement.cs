@@ -20,7 +20,6 @@ public class RitualPlacement : InteractableObject
 
     public override void Catinteraction()
     {
-        base.Catinteraction();
         Debug.Log("Placed");
         PlaceObject(CheckPayload(_player));
     }

@@ -10,8 +10,6 @@ public class ScratchObject : InteractableObject
 
     public override void Catinteraction()
     {
-        base.Catinteraction();
-
         // TO DO: Implement interaction effect
 
         Debug.Log("Scratchy scratchy...");

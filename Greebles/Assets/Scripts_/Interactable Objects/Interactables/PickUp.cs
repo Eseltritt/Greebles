@@ -21,7 +21,6 @@ public class PickUp : InteractableObject
 
     public override void Catinteraction()
     {
-        base.Catinteraction();
         Debug.Log("Picked up");
         transform.parent = _player.transform;
         transform.position = _player.transform.position;

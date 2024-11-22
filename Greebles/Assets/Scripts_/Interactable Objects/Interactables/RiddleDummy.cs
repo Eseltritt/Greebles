@@ -11,7 +11,6 @@ public class RiddleDummy : InteractableObject
     // This method is called when the player interacts with the object. It calls the RiddleOneCount event and deactivates the object.
     public override void Catinteraction()
     {
-        base.Catinteraction();        
         riddleOneCount?.Raise_WithoutParam(this);
         Debug.Log("Riddle");
         gameObject.SetActive(false);

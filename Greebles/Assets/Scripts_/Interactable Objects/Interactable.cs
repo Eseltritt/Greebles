@@ -15,8 +15,5 @@ public abstract class InteractableObject : MonoBehaviour/* , IInteractable */
         gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
-    public virtual void Catinteraction()
-    {
-        // TO DO: Implement general interaction effect
-    }
+    public abstract void Catinteraction();
 }

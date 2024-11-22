@@ -83,7 +83,7 @@ public class HumanAI : NavAgent
     // Tracks all Misplaced Objects
 
     public void OnHitObjectMisplaced(Component sender){
-        if (sender is HitObject)
+        if (sender is CandleInteractable)
             _totalMisplacedObjects.Add(sender.gameObject.GetComponent<InteractableObject>());
     }
 
@@ -100,7 +100,7 @@ public class HumanAI : NavAgent
     #region Track Visible
 
     void OnTriggerEnter(Collider other){
-        HitObject _interactable = other.gameObject?.GetComponent<HitObject>();
+        CandleInteractable _interactable = other.gameObject?.GetComponent<CandleInteractable>();
 
         if (_interactable == null)
             return;
@@ -109,7 +109,7 @@ public class HumanAI : NavAgent
     }
 
     void OnTriggerExit(Collider other){
-        HitObject _interactable = other.gameObject?.GetComponent<HitObject>();
+        CandleInteractable _interactable = other.gameObject?.GetComponent<CandleInteractable>();
 
         if (_interactable == null)
             return;
@@ -225,7 +225,7 @@ public class HumanAI : NavAgent
 
     private void AssignInteractableInitialPosition()
     {
-        targetPosition = _targetInteractable.GetComponent<HitObject>().InitialPosition;
+        targetPosition = _targetInteractable.GetComponent<CandleInteractable>().InitialPosition;
 
         hasTarget = true;
         _hasInteractableTarget = true;
@@ -273,7 +273,7 @@ public class HumanAI : NavAgent
     public void PlaceInteractable(){
         _targetInteractable.transform.parent = null;
 
-        HitObject _targetHitObject = _targetInteractable.GetComponent<HitObject>();
+        CandleInteractable _targetHitObject = _targetInteractable.GetComponent<CandleInteractable>();
         _targetInteractable.transform.localPosition = _targetHitObject.InitialPosition;
         _targetInteractable.transform.rotation = _targetHitObject.InitialRotation;
         _targetHitObject.IsMisplaced = false;

@@ -1,10 +1,9 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public abstract class BasicAnimator : MonoBehaviour
 {
-    [SerializeField] private Animator _animator;
+    [SerializeField] protected Animator _animator;
 
     protected void SetAnimatorTrigger(String name){
         _animator.SetTrigger(name);

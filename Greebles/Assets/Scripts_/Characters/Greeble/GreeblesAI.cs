@@ -79,6 +79,7 @@ public class GreeblesAI : NavAgent
 
     void FollowHuman(){
         targetPosition = _human.transform.position;
+        animationController.StopAttacking();
         MoveToDestination(speed);
     }
 }

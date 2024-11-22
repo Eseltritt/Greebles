@@ -2,7 +2,7 @@ using Unity.Multiplayer.Center.Common.Analytics;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Greebles : InteractableObject
+public class GreeblesInteractable : InteractableObject
 {
     [SerializeField] protected InteractableType _interactionType = InteractableType.Hit;
 
@@ -10,15 +10,16 @@ public class Greebles : InteractableObject
 
     public override void Catinteraction()
     {
-        base.Catinteraction();
-
         // TO DO: Implement interaction effect
 
         // Play Animation
         // Destroy Object
         
-        Debug.Log("Die, filthy Greeble");
+        Die();
     }
 
-
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
 }

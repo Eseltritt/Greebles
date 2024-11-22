@@ -11,4 +11,9 @@ public class WalkObject : InteractableObject
     public override InteractableType interactionType => _interactionType;
 
     public Transform overrideDestination;
+
+    public override void Catinteraction()
+    {
+        
+    }
 }

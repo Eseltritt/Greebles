@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HitObject : InteractableObject
+public class CandleInteractable : InteractableObject
 {
     #region Private Variables
 
@@ -58,9 +58,6 @@ public class HitObject : InteractableObject
 
     public override void Catinteraction()
     {
-        base.Catinteraction();
-
-        Debug.Log("interacted");
         AddForce();
 
         _isMisplaced = true;

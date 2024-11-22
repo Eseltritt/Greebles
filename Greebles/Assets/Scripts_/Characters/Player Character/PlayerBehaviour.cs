@@ -4,7 +4,10 @@ using UnityEngine.AI;
 
 public class PlayerBehaviour : NavAgent
 {
-    private InteractableObject _targetInteractable;
+    [SerializeField] private InteractableObject _targetInteractable;
+
+    [SerializeField] private Animator animator;
+    private PlayerAnimationManager _animationController;
 
     [SerializeField]
     private float _runSpeed;
@@ -15,6 +18,7 @@ public class PlayerBehaviour : NavAgent
     {
         base.Start();
 
+        _animationController = new PlayerAnimationManager(animator);
 
         _runSpeed = speed * 3;
     }
@@ -59,6 +63,7 @@ public class PlayerBehaviour : NavAgent
             targetPosition = _clickTarget.transform.position;
         }
         
+        _animationController.StartRunning();
         MoveToDestination(_runSpeed);
     }
 
@@ -82,6 +87,7 @@ public class PlayerBehaviour : NavAgent
             targetPosition = _clickTarget.transform.position;
         }
         
+        _animationController.StartWalking();
         MoveToDestination(speed);
     }
 
@@ -90,13 +96,22 @@ public class PlayerBehaviour : NavAgent
     public override void DoActionOnArrival()
     {
         if(_targetInteractable != null)
+        {
             _targetInteractable.Catinteraction();
+            if (_targetInteractable.interactionType == InteractableType.Hit)
+                _animationController.Hit();
 
-        // TO DO: Implement interaction effect
+            if (_targetInteractable.interactionType == InteractableType.Scratch)
+                _animationController.Scratch();                
+        }else
+        {
+            _animationController.Idle();
+        }
+    }
 
-        // Play Animation
-        // Call Interact on Anim End
-
+    private void TriggerTargetAnimation()
+    {
+        _targetInteractable.Catinteraction();
         hasTarget = false;
     }
 }

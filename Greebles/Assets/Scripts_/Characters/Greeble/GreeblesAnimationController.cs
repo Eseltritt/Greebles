@@ -6,10 +6,15 @@ public class GreeblesAnimationController : BasicAnimator
 
     // Sends Attack
     public void StartAttack(){
-        SetAnimatorTrigger("Attack");
+        SetAnimatorBool("Attacking", true);
 
         //Play on specific 
         Event_GreebleAttack?.Raise_WithoutParam(this);
+    }
+
+    public void StopAttacking()
+    {
+        SetAnimatorBool("Attacking", false);
     }
 
     public void AttackCompleted()
