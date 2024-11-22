@@ -60,12 +60,12 @@ public class RitualPlacement : InteractableObject
                 ritualComponent.transform.parent = transform;
                 ritualComponent.GetComponent<PickUp>().enabled = false;
                 break;
-            //case "SecretRiddleFive":
-            //    ritualComponent.transform.position = ritualComponents[4].position;
-            //    ritualComponent.transform.rotation = ritualComponents[4].rotation;
-            //    ritualComponent.transform.parent = transform;
-            //    ritualComponent.GetComponent<PickUp>().enabled = false;
-            //    break;
+            case "SecretRiddleFive":
+                ritualComponent.transform.position = ritualComponents[4].position;
+                ritualComponent.transform.rotation = ritualComponents[4].rotation;
+                ritualComponent.transform.parent = transform;
+                ritualComponent.GetComponent<PickUp>().enabled = false;
+                break;
             default:
                 Debug.Log("Not a ritual component");
                 ritualComponent.SetActive(false);
