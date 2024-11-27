@@ -24,7 +24,7 @@ public class GreeblesAI : NavAgent
         
         StartChasing();
 
-        hasTarget = true;
+        NavHasTarget = true;
     }
 
     public override void Update(){
@@ -78,8 +78,8 @@ public class GreeblesAI : NavAgent
     }
 
     void FollowHuman(){
-        targetPosition = _human.transform.position;
+        navTarget = _human.transform.position;
         animationController.StopAttacking();
-        MoveToDestination(speed);
+        MoveToDestination(navTarget);
     }
 }

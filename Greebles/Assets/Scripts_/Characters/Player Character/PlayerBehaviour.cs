@@ -9,7 +9,7 @@ public class PlayerBehaviour : NavAgent
     [SerializeField] private Animator animator;
     private PlayerAnimationManager _animationController;
 
-    [SerializeField]
+    private float _normalSpeed;
     private float _runSpeed;
 
     #region Init
@@ -20,7 +20,8 @@ public class PlayerBehaviour : NavAgent
 
         _animationController = new PlayerAnimationManager(animator);
 
-        _runSpeed = speed * 3;
+        _normalSpeed = navSpeed;
+        _runSpeed = navSpeed * 3;
     }
 
     void OnEnable(){
@@ -45,9 +46,9 @@ public class PlayerBehaviour : NavAgent
     #region Click Events
 
     private void DoubleClickRegistered(InteractableObject _clickTarget, Vector3 _targetPosition){
-        hasTarget = true;
+        NavHasTarget = true;
         
-        targetPosition = _targetPosition;
+        navTarget = _targetPosition;
 
         if (_clickTarget.interactionType == InteractableType.Walk)
         {
@@ -56,21 +57,22 @@ public class PlayerBehaviour : NavAgent
 
             if (walkObject.overrideDestination != null)
             {
-                targetPosition = walkObject.overrideDestination.position;
+                navTarget = walkObject.overrideDestination.position;
             }
         } else{
             _targetInteractable = _clickTarget;
-            targetPosition = _clickTarget.transform.position;
+            navTarget = _clickTarget.transform.position;
         }
         
         _animationController.StartRunning();
-        MoveToDestination(_runSpeed);
+        SetNavSpeed(_runSpeed);
+        MoveToDestination(navTarget);
     }
 
     private void SingleClickRegistered(InteractableObject _clickTarget, Vector3 _targetPosition){
-        hasTarget = true;
+        NavHasTarget = true;
 
-        targetPosition = _targetPosition;
+        navTarget = _targetPosition;
 
         if (_clickTarget.interactionType == InteractableType.Walk)
         {
@@ -80,15 +82,16 @@ public class PlayerBehaviour : NavAgent
             // Check if the cast was successful and overrideDestination is set
             if (walkObject.overrideDestination != null)
             {
-                targetPosition = walkObject.overrideDestination.position;
+                navTarget = walkObject.overrideDestination.position;
             }
         } else{
             _targetInteractable = _clickTarget;
-            targetPosition = _clickTarget.transform.position;
+            navTarget = _clickTarget.transform.position;
         }
         
         _animationController.StartWalking();
-        MoveToDestination(speed);
+        SetNavSpeed(_normalSpeed);
+        MoveToDestination(navTarget);
     }
 
     #endregion
@@ -102,7 +105,7 @@ public class PlayerBehaviour : NavAgent
                 _animationController.Hit();
 
             if (_targetInteractable.interactionType == InteractableType.Scratch)
-                _animationController.Scratch();                
+                _animationController.Scratch();
         }else
         {
             _animationController.Idle();
@@ -112,6 +115,6 @@ public class PlayerBehaviour : NavAgent
     private void TriggerTargetAnimation()
     {
         _targetInteractable.Catinteraction();
-        hasTarget = false;
+        NavHasTarget = false;
     }
 }

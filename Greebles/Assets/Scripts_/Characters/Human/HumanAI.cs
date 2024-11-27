@@ -33,6 +33,8 @@ public class HumanAI : NavAgent
     private bool _holdingInteractable = false;
     private bool _hasInteractableTarget = false;
 
+    [SerializeField] private Animator _animator;
+
     #endregion
     
     #region Public Variables
@@ -69,7 +71,7 @@ public class HumanAI : NavAgent
 
     #region AI
 
-    void StateUpdate(){
+    public void StateUpdate(){
         UpdateSeenMisplaced();
 
         if(HasSeenMisplacedObjects()){
@@ -170,7 +172,7 @@ public class HumanAI : NavAgent
         switch (_state)
         {
             case MoveState.Idle:
-                if(!hasTarget)
+                if(!NavHasTarget)
                     AssigneDefaultTarget();
             break;
             case MoveState.Clean:
@@ -181,7 +183,8 @@ public class HumanAI : NavAgent
             break;
         }
 
-        hasTarget = true;
+        _animator.SetTrigger("Walk");
+        NavHasTarget = true;
         agent.isStopped = false;
     }
         
@@ -208,29 +211,29 @@ public class HumanAI : NavAgent
 
         _previousTarget = _targets[rand];
 
-        hasTarget = true;
-        targetPosition = _previousTarget.transform.position;
-        MoveToDestination(speed);
+        NavHasTarget = true;
+        navTarget = _previousTarget.transform.position;
+        MoveToDestination(navTarget);
     }
 
     private void AssigneInteractableTarget()
     {      
-        targetPosition = _targetInteractable.transform.position;
+        navTarget = _targetInteractable.transform.position;
 
-        hasTarget = true;
+        NavHasTarget = true;
         _hasInteractableTarget = true;
 
-        MoveToDestination(speed);
+        MoveToDestination(navTarget);
     }
 
     private void AssignInteractableInitialPosition()
     {
-        targetPosition = _targetInteractable.GetComponent<CandleInteractable>().InitialPosition;
+        navTarget = _targetInteractable.GetComponent<CandleInteractable>().transform.position;
 
-        hasTarget = true;
+        NavHasTarget = true;
         _hasInteractableTarget = true;
 
-        MoveToDestination(speed);
+        MoveToDestination(navTarget);
     }
 
     public override void DoActionOnArrival()
@@ -238,11 +241,12 @@ public class HumanAI : NavAgent
         base.DoActionOnArrival();
 
         // TO DO: play pick up animation
-
+        _animator.SetTrigger("Stop");
+        
         switch (_state)
         {
             case MoveState.Idle:
-                hasTarget = false;
+                NavHasTarget = false;
                 StateUpdate();
             break;
             case MoveState.Clean:
@@ -250,16 +254,18 @@ public class HumanAI : NavAgent
                 {
                     PickUpInteractable();
                     AssignInteractableInitialPosition();
-                }else{
-                    PlaceInteractable();
-                    Reset();
-
                     StateUpdate();
+                }else{
+                    _animator.SetTrigger("Drop");
+                    Invoke("PlaceInteractable", 3);
+                    Invoke("Reset", 3);
+                    /* PlaceInteractable();
+                    Reset(); */
+
+                    /* StateUpdate(); */
                 }
             break;
         }
-
-        StateUpdate();
     }
 
     public void PickUpInteractable(){
@@ -267,6 +273,8 @@ public class HumanAI : NavAgent
         _targetInteractable.transform.localPosition = Vector3.zero;
         _targetInteractable.GetComponent<Rigidbody>().AddForce(Vector3.zero);
 
+        _animator.SetBool("IsHolding", true);
+        _animator.SetTrigger("Grab");
         _holdingInteractable = true;
     }
 
@@ -276,9 +284,12 @@ public class HumanAI : NavAgent
         CandleInteractable _targetHitObject = _targetInteractable.GetComponent<CandleInteractable>();
         _targetInteractable.transform.localPosition = _targetHitObject.InitialPosition;
         _targetInteractable.transform.rotation = _targetHitObject.InitialRotation;
-        _targetHitObject.IsMisplaced = false;
+        _targetHitObject.ToBeCorrected = false;
         RemoveSeen(_targetInteractable);
         _totalMisplacedObjects.Remove(_targetInteractable);
+        _animator.SetBool("IsHolding", false);
+
+        /* Reset(); */
     }
 
     public void Reset(){
@@ -286,7 +297,9 @@ public class HumanAI : NavAgent
         _hasInteractableTarget = false;
         _holdingInteractable = false;
         
-        hasTarget = false;
+        NavHasTarget = false;
+
+        /* StateUpdate(); */
     }
 
     #endregion

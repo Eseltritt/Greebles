@@ -7,7 +7,7 @@ public enum InteractableType
     Hit,
 }
 
-public abstract class InteractableObject : MonoBehaviour/* , IInteractable */
+public abstract class InteractableObject : MonoBehaviour
 {
     public abstract InteractableType interactionType {get;}
 

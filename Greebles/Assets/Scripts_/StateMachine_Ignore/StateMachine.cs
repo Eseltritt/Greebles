@@ -1,12 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEngine;
-using UnityEngine.Rendering;
 
 public class StateMachine
 {
-    IState _currentState ;
+    IState _currentState;
 
     private Dictionary<Type, List<Transition>> _transitions = new Dictionary<Type, List<Transition>>();
     private List<Transition> _currentTransitions = new List<Transition>();

@@ -5,48 +5,59 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class NavAgent : MonoBehaviour
 {
-    private float stoppingDistance;
-    protected bool hasTarget;
-    protected Vector3 targetPosition; // Set this variable to target position in order to move the 
+    private float navStoppingDistance;
+    public bool NavHasTarget { get; protected set; }
+    protected Vector3 navTarget;
     protected NavMeshAgent agent;
-    [SerializeField] protected float speed;
+    [SerializeField] protected float navSpeed;
 
-    /* protected abstract float interactionDistance { get; } */
+    bool destReached = false;
+
 
     public virtual void Start(){
         agent = gameObject.GetComponent<NavMeshAgent>();
-        if (stoppingDistance == 0)
-            stoppingDistance = agent.stoppingDistance;
+        if (navStoppingDistance == 0)
+            navStoppingDistance = agent.stoppingDistance;
         else
-            agent.stoppingDistance = stoppingDistance;
+            agent.stoppingDistance = navStoppingDistance;
     }
 
     public virtual void Update(){
-        if (hasTarget)
+        if (NavHasTarget)
         {
-            if (NavPathDestinationReached())
+            if (NavPathDestinationReached() && !destReached)
+            {
+                destReached = true;
                 DoActionOnArrival();
+            }
         }
             
     }
 
     protected bool NavPathDestinationReached()
     {
-        if (agent.remainingDistance <= stoppingDistance && agent.remainingDistance != 0)
+        if (agent.remainingDistance <= navStoppingDistance && agent.remainingDistance != 0)
             return true;
         
         return false;
     }
 
-    public void MoveToDestination(float _speed){
+    public void MoveToDestination(Vector3 targetTransform){
+        NavHasTarget = true;
+        destReached = false;
         agent.isStopped = false;
-        agent.destination = targetPosition;
-        agent.speed = _speed;
+        agent.destination = targetTransform;
+        agent.speed = navSpeed;
+    }
+
+    public void SetNavSpeed(float speed)
+    {
+        navSpeed = speed;
     }
 
     public virtual void DoActionOnArrival(){
+        NavHasTarget = false;
         agent.speed = 0;
         agent.isStopped = true;
-        /* agent.ResetPath(); */
     }
 }

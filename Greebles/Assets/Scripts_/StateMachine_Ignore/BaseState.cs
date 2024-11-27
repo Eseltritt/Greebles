@@ -26,13 +26,12 @@ public abstract class BaseState : IState
         Debug.Log("enter");
     }
 
-    public void Exit()
-    {
-        Debug.Log("exit");
-    }
+    public abstract void Exit();
 
-    public void StateUpdate()
+    public abstract void StateUpdate();
+
+    public void ArrivedAtTarget()
     {
-        Debug.Log("tick => " + gameObject.name);
+        throw new System.NotImplementedException();
     }
 }
