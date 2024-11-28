@@ -79,7 +79,6 @@ public class HumanIdleWalkState : IState
     public void Enter()
     {
         _hasTarget = false;
-        Debug.Log("enter idle state");
         /* AssignRoomTarget(); */
     }
 

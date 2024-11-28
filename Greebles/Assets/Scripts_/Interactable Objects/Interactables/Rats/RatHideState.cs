@@ -7,55 +7,42 @@ public class RatHideState : IState
     private NavMeshAgent _navAgent;
     private Transform _hideDestination;
 
-    private float _totalWaitTime;
+    private float _hideTime;
+    private float _timer;
+    private bool _isHideDestReached = false;
 
-    public RatHideState(RatAI rat, NavMeshAgent agent, Transform escapeDest) :base()
+    public RatHideState(RatAI rat, Transform escapeDest, float hideTime)
     {
         _rat = rat;
-        _navAgent = agent;
         _hideDestination = escapeDest;
-    }
-
-    public void ArrivedAtTarget()
-    {
-        throw new System.NotImplementedException();
+        _hideTime = hideTime;
     }
 
     public void Enter()
     {
-        Debug.Log(this + " entered");
-        _totalWaitTime = 0;
-        _navAgent.destination = _hideDestination.position;
+        _timer = _hideTime;
+        _isHideDestReached = false;
+        
+        _rat.MoveToDestination(_hideDestination.position);
     }
 
     public void Exit()
     {
-        Debug.Log(this + " exited");
     }
 
     public void StateUpdate()
     {
-        if(HideAreaReached())
+        if(_isHideDestReached)
         {
-            _totalWaitTime += 1 * Time.deltaTime;
+            _timer -= 1 * Time.deltaTime;
+
+            if (_timer <= 0)
+                _rat.SetState(_rat.IdleState);
         }
     }
 
-    public bool WaitEnded(float time)
+    public void ArrivedAtTarget()
     {
-        if (HideAreaReached() && _totalWaitTime >= time)
-            return true;
-
-        return false;
-    }
-
-    private bool HideAreaReached()
-    {
-        float dist = Vector3.Distance(_navAgent.transform.position, _hideDestination.position);
-        
-        if (_navAgent.remainingDistance <= _navAgent.stoppingDistance && _navAgent.remainingDistance != 0)
-            return true;
-        
-        return false;
+        _isHideDestReached = true;
     }
 }

@@ -3,21 +3,20 @@ using UnityEngine;
 
 public class RatInteractable : InteractableObject
 {
-    public override InteractableType interactionType => throw new System.NotImplementedException();
+    [SerializeField] private InteractableType _interactionType = InteractableType.Hit;
+    public override InteractableType interactionType => _interactionType;
+
     private RatAI ratAI;
 
-    private void Start()
+    public override void Start()
     {
+        base.Start();
         ratAI = gameObject.GetComponent<RatAI>();
     }
 
     public override void Catinteraction()
     {
-        Escape();
-    }
-
-    void Escape()
-    {
-        
+        Debug.Log("cat interacted with rat");
+        ratAI.Escape();
     }
 }

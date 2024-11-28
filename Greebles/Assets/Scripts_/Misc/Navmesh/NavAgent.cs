@@ -5,7 +5,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class NavAgent : MonoBehaviour
 {
-    private float navStoppingDistance;
+    [SerializeField] private float navStoppingDistance;
     public bool NavHasTarget { get; protected set; }
     protected Vector3 navTarget;
     protected NavMeshAgent agent;
@@ -42,7 +42,7 @@ public abstract class NavAgent : MonoBehaviour
         return false;
     }
 
-    public void MoveToDestination(Vector3 targetTransform){
+    public virtual void MoveToDestination(Vector3 targetTransform){
         NavHasTarget = true;
         destReached = false;
         agent.isStopped = false;
@@ -56,6 +56,7 @@ public abstract class NavAgent : MonoBehaviour
     }
 
     public virtual void DoActionOnArrival(){
+        destReached = true;
         NavHasTarget = false;
         agent.speed = 0;
         agent.isStopped = true;

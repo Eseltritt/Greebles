@@ -1,78 +1,84 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class RatIdleState : IState
 {
     RatAI _rat;
-    NavMeshAgent _navAgent;
-    private float _idleWaitTime;
-    private float _idleWaitChance;
+    
+    //Wait Check
     private float _updateRate;
+    private float _updateTimer;
 
+    private float _idleWaitTime;
+    private float _waitTimer;
+
+    private float _idleWaitChance;
     private bool _isWaiting = false;
-    private float _totalWaitTime;
-    private float _updateTime;
+    private bool _hasTarget = false;
 
-    public RatIdleState(RatAI rat, NavMeshAgent agent, float waitTime, float waitChance, float updateRate) :base()
+    public RatIdleState(RatAI rat, float waitTime, float waitChance, float idleUpdateRate)
     {
         _rat = rat;
-        _navAgent = agent;
         _idleWaitTime = waitTime;
         _idleWaitChance = waitChance;
-        _updateRate = updateRate;
+        _updateRate = idleUpdateRate;
     }
     public void Enter()
     {
-        Debug.Log(this + " entered");
         _isWaiting = false;
+        _hasTarget = false;
+        _updateTimer = _updateRate;
     }
 
     public void Exit()
     {
-        Debug.Log(this + " exited");
     }
 
     public void StateUpdate()
     {
         if (_isWaiting)
         {
-            _totalWaitTime += 1 * Time.deltaTime;
-            if (_totalWaitTime >= _idleWaitTime)
-            {
-                IdleUpdate();
-            }
+            _waitTimer -= 1 * Time.deltaTime;
+
+            if (_waitTimer <= 0)
+                _isWaiting = false;
         } else
         {
-            _updateTime += 1 * Time.deltaTime;
-            if (_updateTime >= _updateRate)
-            {
-                IdleUpdate();
-            }
+            if(!_hasTarget)
+                FindNewTarget();
         }
     }
 
-    private void IdleUpdate()
+    void WaitCheck()
     {
-        float chance = Random.Range(0, 1);
+        float chance = Random.Range(0f, 1f);
+
         if (chance <= _idleWaitChance)
         {
-            Stop();
+            float newWaitTime = Random.Range((float)_idleWaitTime/2, (float)_idleWaitTime);
+            _waitTimer = newWaitTime;
             _isWaiting = true;
         }
     }
 
-    private void Stop()
+    void FindNewTarget()
     {
-        _navAgent.isStopped = true;
-    }
+        List<Transform> targets = new List<Transform>();
 
-    private void SetDestination()
-    {
-        _navAgent.isStopped = false;
+        foreach (Transform transform in _rat._roomDestinations)
+        {
+            targets.Add(transform);
+        }
+
+        int rand = Random.Range(0, _rat._roomDestinations.Length-1);
+
+        _hasTarget = true;
+        _rat.MoveToDestination(_rat._roomDestinations[rand].position);
     }
 
     public void ArrivedAtTarget()
     {
-        throw new System.NotImplementedException();
+        WaitCheck();
+        _hasTarget = false;
     }
 }

@@ -2,19 +2,14 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public enum RatState
-{
-    Idle,
-    Escape,
-    Wait
-}
-
 public class RatAI : NavAgent
 {
-    private RatState _state;
-    private StateMachine _stateMachine;
-    private Transform _escapeDestination;
-    private Transform _roomDestination;
+    private IState _currentState;
+    public IState IdleState { get; private set; }
+    public IState HideState { get; private set; }
+
+    public Transform _escapeDestination;
+    public Transform[] _roomDestinations;
 
     [SerializeField] private float _hideTime;
     [SerializeField] private float _idleWaitTime;
@@ -24,75 +19,57 @@ public class RatAI : NavAgent
     //StateMachine Test
     
     private Animator _animator;
-    private bool hasBeenScared { get; set; }
-    
+    public bool fridgeOpen;
 
-    public RatAI(Transform escapeDest, Transform roomDest)
+    public void SetUp(GameObject escapeDest, Transform[] roomDestinations)
     {
-        _escapeDestination = escapeDest;
-        _roomDestination = roomDest;
+        _escapeDestination = escapeDest.transform;
+        _roomDestinations = roomDestinations;
     }
 
-    void Start()
+    public override void Start()
     {
-        /* _state = RatState.Idle; */
-        _stateMachine = new StateMachine();
+        base.Start();
+        IdleState = new RatIdleState(this, _idleWaitTime, _idleWaitChance, _idleUpdateRate);
+        HideState = new RatHideState(this, _escapeDestination, _hideTime);
 
-        var ratIdleState = new RatIdleState(this, agent, _idleWaitTime, _idleWaitChance, _idleUpdateRate);
-        var ratHideState = new RatHideState(this, agent, _escapeDestination);
-
-        _stateMachine.AddTransition(ratIdleState, ratHideState, isScared());
-        _stateMachine.AddTransition(ratHideState, ratIdleState, hideWaitEnded());
-
-        Func<bool> isScared() => () => hasBeenScared == true;
-        Func<bool> hideWaitEnded() => () => ratHideState.WaitEnded(_hideTime);
+        _currentState = IdleState;
+        _currentState.Enter();
     }
 
-    void OnEnable()
+    public override void Update()
     {
-        //Event when cat interacts with this Rat
+        base.Update();
+        _currentState.StateUpdate();
     }
 
-    void OnDisable()
+    public void SetState(IState state)
     {
-        //Event when cat interacts with this Rat
+        if (fridgeOpen)
+            return;
+            
+        if (_currentState == state)
+            return;
+
+        _currentState.Exit();
+        _currentState = state;
+        _currentState.Enter();
     }
 
-    public override void Update() /* => _stateMachine.StateMachineUpdate(); */
+    public void Escape()
     {
-
-    }
-
-    /* void SetState(RatState state)
-    {
-        switch (state)
-        {
-            case RatState.Idle:
-
-            break;
-            case RatState.Escape:
-
-            break;
-            case RatState.Wait:
-                Invoke("EndWait", _waitTime);
-            break;
-        }
-    } */
-
-    void Escape()
-    {
-        navTarget = _escapeDestination.position;
-        NavHasTarget = true;
-
-        agent.SetDestination(navTarget);
+        SetState(HideState);
     }
 
     public override void DoActionOnArrival()
     {
+        base.DoActionOnArrival();
+        _currentState.ArrivedAtTarget();
+
     }
 
-    void EndWait()
+    /* public override void MoveToDestination(Vector3 targetTransform)
     {
-
-    }
+        base.MoveToDestination(targetTransform);
+    } */
 }

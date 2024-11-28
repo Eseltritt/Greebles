@@ -1,3 +1,4 @@
+using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -27,8 +28,6 @@ public class PlayerBehaviour : NavAgent
     void OnEnable(){
         InputReader.onGameInput_DoubleClick += DoubleClickRegistered;
         InputReader.onGameInput_SingleClick += SingleClickRegistered;
-
-        /* _agent = gameObject.GetComponent<NavMeshAgent>(); */
     }
 
     void OnDisable(){
@@ -61,7 +60,7 @@ public class PlayerBehaviour : NavAgent
             }
         } else{
             _targetInteractable = _clickTarget;
-            navTarget = _clickTarget.transform.position;
+            /* navTarget = _clickTarget.transform.position; */
         }
         
         _animationController.StartRunning();
@@ -106,10 +105,11 @@ public class PlayerBehaviour : NavAgent
 
             if (_targetInteractable.interactionType == InteractableType.Scratch)
                 _animationController.Scratch();
-        }else
-        {
-            _animationController.Idle();
+
+            _targetInteractable = null;
         }
+        
+        _animationController.Idle();
     }
 
     private void TriggerTargetAnimation()
