@@ -27,7 +27,7 @@ public class InputReader : MonoBehaviour, GameInput.IGameplayActions, GameInput.
     public delegate void OnUIInput_Click();
     public static event OnUIInput_Click onUIInput_Click;
 
-    private Camera _cam;
+    public Camera _cam;
     private Vector3 _targetPosition;
     private InteractableObject _targetInteractable;
 
@@ -50,7 +50,8 @@ public class InputReader : MonoBehaviour, GameInput.IGameplayActions, GameInput.
             SetGameplay();
         }
 
-        _cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        if (_cam == null)
+            _cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();            
     }
 
     public void SetGameplay()
