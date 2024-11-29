@@ -16,7 +16,6 @@ public class RatInteractable : InteractableObject
 
     public override void Catinteraction()
     {
-        Debug.Log("cat interacted with rat");
         ratAI.Escape();
     }
 }

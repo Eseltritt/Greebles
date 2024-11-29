@@ -70,6 +70,7 @@ public class HumanIdleWalkState : IState
         {
             if (interactable is IHumanInteractable humanInteractable && humanInteractable.ToBeCorrected)
             {
+                Debug.Log("interactable to be corrected found");
                 _human.targetInteractable = humanInteractable as InteractableObject;
                 _human.SetState(_human.CollectState);
             }

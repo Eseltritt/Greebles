@@ -11,6 +11,7 @@ public class RatSpawner : MonoBehaviour
     [SerializeField] private GameEvent OnAllRatsHidden;
     private List<RatAI> ratsInPlay = new List<RatAI>();
     private List<RatAI> hiddenRats = new List<RatAI>();
+    private int hiddenAmount;
 
     void Start()
     {
@@ -20,33 +21,22 @@ public class RatSpawner : MonoBehaviour
             RatAI ratAI = rat.GetComponent<RatAI>();
             ratAI.SetUp(gameObject, roomDestinations);
 
+            rat.name = "rat_" + i;
             ratsInPlay.Add(ratAI);
         }
     }
 
-    public void UpdateHiddenRats(Component sender)
+    public void UpdateHiddenRats(Component sender, object isHidden)
     {
-        if (sender is RatAI)
+        if (sender is RatAI && isHidden is bool)
         {
-            hiddenRats.Add((RatAI)sender);
+            if ((bool)isHidden)
+                hiddenAmount ++;
+            else
+                hiddenAmount --;
 
-            bool allRatsHidden = true;
-
-            foreach (var rat in ratsInPlay)
-            {
-                if (!hiddenRats.Contains(rat))
-                    allRatsHidden = false;
-            }
-
-            if (allRatsHidden)
-            {
+            if (hiddenAmount == ratsInPlay.Count)
                 OnAllRatsHidden?.Raise_WithoutParam(this);
-
-                foreach (var rat in ratsInPlay)
-                {
-                    rat.fridgeOpen = true;
-                }
-            }
         }
     }
 

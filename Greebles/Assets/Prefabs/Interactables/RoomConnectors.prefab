@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 282130779688392695}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.960005, y: -0.5, z: -0.13521466}
+  m_LocalPosition: {x: -3.98, y: -0.498, z: 0.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 1103660963898983460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9, y: 8.843, z: -7.0729}
+  m_LocalPosition: {x: -3.9, y: 8.843, z: -0.5}
   m_LocalScale: {x: 1, y: 18.070068, z: 7.138286}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionType: 0
-  overrideDestination: {fileID: 6801626741202268450}
+  overrideDestination: {fileID: 6767254044330430058}
 --- !u!1 &4410846506150286297
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7006853834445667535}
   m_Layer: 0
-  m_Name: Connected Doors
+  m_Name: RoomConnectors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -240,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 5603339333923168149}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.3, y: 8.843, z: -7.11}
+  m_LocalPosition: {x: 32.1, y: 8.843, z: 10.4}
   m_LocalScale: {x: 1, y: 18.070068, z: 7.138286}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactionType: 0
-  overrideDestination: {fileID: 6767254044330430058}
+  overrideDestination: {fileID: 6801626741202268450}
 --- !u!1 &6714925423285856550
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,8 +382,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6714925423285856550}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.300003, y: 0, z: -17.200005}
+  m_LocalRotation: {x: -0, y: -0.7013454, z: -0, w: 0.7128217}
+  m_LocalPosition: {x: 15.832471, y: -0.1, z: -7.162078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -403,12 +403,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 1
   m_AgentTypeID: -1372625422
-  m_StartPoint: {x: 55.354977, y: 0, z: 9.720145}
-  m_EndPoint: {x: 16.914284, y: 0, z: 10.355697}
-  m_StartTransform: {fileID: 0}
-  m_EndTransform: {fileID: 0}
+  m_StartPoint: {x: -0.12943226, y: 0, z: 2.2421134}
+  m_EndPoint: {x: 2.0535061, y: 0, z: -1.4807576}
+  m_StartTransform: {fileID: 6767254044330430058}
+  m_EndTransform: {fileID: 6801626741202268450}
   m_Activated: 1
-  m_Width: 5
+  m_Width: 0.50211203
   m_CostModifier: 1
   m_IsOverridingCost: 0
   m_Bidirectional: 1
@@ -428,13 +428,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 1
   m_AgentTypeID: 0
-  m_StartPoint: {x: 55.53452, y: 0, z: 9.720148}
-  m_EndPoint: {x: 16.73721, y: 0, z: 10.355699}
-  m_StartTransform: {fileID: 0}
-  m_EndTransform: {fileID: 0}
+  m_StartPoint: {x: -0.19773135, y: 0, z: 2.3887444}
+  m_EndPoint: {x: 2.0893373, y: 0, z: -1.3763301}
+  m_StartTransform: {fileID: 6767254044330430058}
+  m_EndTransform: {fileID: 6801626741202268450}
   m_Activated: 1
-  m_Width: 5
-  m_CostModifier: 1
+  m_Width: 0.48440844
+  m_CostModifier: 0.5
   m_IsOverridingCost: 0
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
@@ -453,13 +453,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 1
   m_AgentTypeID: -334000983
-  m_StartPoint: {x: 16.83153, y: 0, z: 10.1741705}
-  m_EndPoint: {x: 55.201534, y: 0, z: 9.9953575}
-  m_StartTransform: {fileID: 0}
-  m_EndTransform: {fileID: 0}
+  m_StartPoint: {x: -0.1811056, y: 0, z: 2.247066}
+  m_EndPoint: {x: 2.056961, y: 0, z: -1.3976866}
+  m_StartTransform: {fileID: 6767254044330430058}
+  m_EndTransform: {fileID: 6801626741202268450}
   m_Activated: 1
-  m_Width: 5
-  m_CostModifier: 1
+  m_Width: 0.50828636
+  m_CostModifier: 0.2
   m_IsOverridingCost: 0
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
@@ -489,7 +489,7 @@ Transform:
   m_GameObject: {fileID: 7958155753847272454}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.54, y: -0.5, z: -0}
+  m_LocalPosition: {x: 2.54, y: -0.496, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -7,16 +7,10 @@ public class PickUp : InteractableObject
 
     public override InteractableType interactionType => _interactionType;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Start()
     {
+        base.Start();
         _player = GameObject.FindGameObjectWithTag("Player");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public override void Catinteraction()

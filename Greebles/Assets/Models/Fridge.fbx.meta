@@ -31,7 +31,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: FridgeDoorClose
+      name: FridgeDoorClose_Full
       takeName: FridgeDoorOpenClose
       internalID: -7359136432426899001
       firstFrame: 135
@@ -64,7 +64,7 @@ ModelImporter:
       takeName: FridgeDoorOpenClose
       internalID: -4651707679622581833
       firstFrame: 0
-      lastFrame: 5
+      lastFrame: 4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -82,7 +82,32 @@ ModelImporter:
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
+      curves:
+      - name: Curve
+        curve:
+          serializedVersion: 2
+          curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1.149174
+            outSlope: 1.149174
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.25539324
+          - serializedVersion: 3
+            time: 2
+            value: 1
+            inSlope: 0.02384299
+            outSlope: 0.02384299
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 1
+            outWeight: 0
+          preInfinity: 2
+          postInfinity: 2
+          rotationOrder: 4
       events: []
       transformMask: []
       maskType: 3
@@ -92,7 +117,7 @@ ModelImporter:
       name: FridgeDoorOpen_Full
       takeName: FridgeDoorOpenClose
       internalID: -6922010662414772013
-      firstFrame: 5
+      firstFrame: 4
       lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
@@ -122,6 +147,35 @@ ModelImporter:
       takeName: FridgeDoorOpenClose
       internalID: -3992772364036539544
       firstFrame: 0
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: FridgeDoorClose_Slightly
+      takeName: FridgeDoorOpenClose
+      internalID: 5379906305921558565
+      firstFrame: 151
       lastFrame: 155
       wrapMode: 0
       orientationOffsetY: 0

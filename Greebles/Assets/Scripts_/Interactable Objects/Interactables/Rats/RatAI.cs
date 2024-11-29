@@ -16,10 +16,9 @@ public class RatAI : NavAgent
     [SerializeField] private float _idleWaitChance;
     [SerializeField] private float _idleUpdateRate;
 
-    //StateMachine Test
+    [SerializeField] public GameEvent OnRatHidden;
     
-    private Animator _animator;
-    public bool fridgeOpen;
+    public bool fridgeOpen = false;
 
     public void SetUp(GameObject escapeDest, Transform[] roomDestinations)
     {
@@ -30,6 +29,8 @@ public class RatAI : NavAgent
     public override void Start()
     {
         base.Start();
+        fridgeOpen = false;
+
         IdleState = new RatIdleState(this, _idleWaitTime, _idleWaitChance, _idleUpdateRate);
         HideState = new RatHideState(this, _escapeDestination, _hideTime);
 
@@ -45,11 +46,11 @@ public class RatAI : NavAgent
 
     public void SetState(IState state)
     {
-        if (fridgeOpen)
-            return;
-            
         if (_currentState == state)
             return;
+
+        if(state == IdleState)
+            OnRatHidden?.Raise_SingleParam(this, false);
 
         _currentState.Exit();
         _currentState = state;
@@ -64,12 +65,29 @@ public class RatAI : NavAgent
     public override void DoActionOnArrival()
     {
         base.DoActionOnArrival();
-        _currentState.ArrivedAtTarget();
 
+        if (_currentState == HideState)
+            OnRatHidden?.Raise_SingleParam(this, true);
+
+        _currentState.ArrivedAtTarget();
     }
 
-    /* public override void MoveToDestination(Vector3 targetTransform)
+    public void SetFridgeOpen(Component sender)
+    {
+        fridgeOpen = true;
+    }
+
+    public void SetFridgeClosed(Component sender)
+    {
+        fridgeOpen = false;
+        
+    }
+
+    public override void MoveToDestination(Vector3 targetTransform)
     {
         base.MoveToDestination(targetTransform);
-    } */
+
+        /* if (_currentState == HideState)
+            Debug.Log(gameObject.name + " is moving to hide spot " + targetTransform); */
+    }
 }

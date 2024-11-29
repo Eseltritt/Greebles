@@ -36,6 +36,9 @@ public class RatIdleState : IState
 
     public void StateUpdate()
     {
+        if (_rat.fridgeOpen)
+            return;
+            
         if (_isWaiting)
         {
             _waitTimer -= 1 * Time.deltaTime;

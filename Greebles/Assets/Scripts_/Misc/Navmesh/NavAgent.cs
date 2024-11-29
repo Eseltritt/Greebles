@@ -46,8 +46,8 @@ public abstract class NavAgent : MonoBehaviour
         NavHasTarget = true;
         destReached = false;
         agent.isStopped = false;
-        agent.destination = targetTransform;
         agent.speed = navSpeed;
+        agent.destination = targetTransform;
     }
 
     public void SetNavSpeed(float speed)

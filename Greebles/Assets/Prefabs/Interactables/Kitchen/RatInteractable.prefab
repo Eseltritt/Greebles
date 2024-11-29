@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4173610006851008165}
@@ -101,6 +101,8 @@ GameObject:
   - component: {fileID: 2814822149806380299}
   - component: {fileID: 1908027933344722173}
   - component: {fileID: 8358458512370650998}
+  - component: {fileID: 6487609691158895121}
+  - component: {fileID: 6086698242500907275}
   m_Layer: 0
   m_Name: RatInteractable
   m_TagString: Untagged
@@ -118,7 +120,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 31.299995, y: -7.3, z: 16.771626}
-  m_LocalScale: {x: 1500, y: 1500, z: 1500}
+  m_LocalScale: {x: 40, y: 40, z: 40}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5737773532235142877}
@@ -133,16 +135,16 @@ NavMeshAgent:
   m_GameObject: {fileID: 3561995364323294233}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.00089164753
+  m_Radius: 0.002
   m_Speed: 3.5
   m_Acceleration: 500
   avoidancePriority: 50
-  m_AngularSpeed: 1000
+  m_AngularSpeed: 10000000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.005092895
+  m_Height: 0.0015
   m_BaseOffset: -0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -171,8 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18e9094c6823274695a19883679e9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navStoppingDistance: 1
-  navSpeed: 20
+  navStoppingDistance: 0.05
+  navSpeed: 2
   _escapeDestination: {fileID: 0}
   _roomDestinations:
   - {fileID: 0}
@@ -181,10 +183,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  _hideTime: 5
+  _hideTime: 10
   _idleWaitTime: 5
   _idleWaitChance: 0.5
   _idleUpdateRate: 0.5
+  OnRatHidden: {fileID: 11400000, guid: d99c46f67afdc434288bb1b643616da6, type: 2}
+  fridgeOpen: 0
 --- !u!135 &8358458512370650998
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -206,3 +210,71 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0015
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6487609691158895121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561995364323294233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987d323a2f1f4d443b40a9b586c73621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ea92fcf5cc908dd469b6e1e9e5727a1c, type: 2}
+  response_0:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1908027933344722173}
+        m_TargetAssemblyTypeName: RatAI, Assembly-CSharp
+        m_MethodName: SetFridgeOpen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  response_1:
+    m_PersistentCalls:
+      m_Calls: []
+  response_2:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6086698242500907275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561995364323294233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987d323a2f1f4d443b40a9b586c73621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e5ec3d6cadbdce44380ccbc257e83686, type: 2}
+  response_0:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1908027933344722173}
+        m_TargetAssemblyTypeName: RatAI, Assembly-CSharp
+        m_MethodName: SetFridgeClosed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  response_1:
+    m_PersistentCalls:
+      m_Calls: []
+  response_2:
+    m_PersistentCalls:
+      m_Calls: []

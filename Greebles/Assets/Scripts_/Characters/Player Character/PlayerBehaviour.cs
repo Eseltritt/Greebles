@@ -22,7 +22,7 @@ public class PlayerBehaviour : NavAgent
         _animationController = new PlayerAnimationManager(animator);
 
         _normalSpeed = navSpeed;
-        _runSpeed = navSpeed * 3;
+        _runSpeed = navSpeed * 2;
     }
 
     void OnEnable(){

@@ -3,14 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-/* [System.Serializable]
-public class EventData : MonoBehaviour
-{
-    private GameEvent gameEvent;
-    private CustomgameEvent_OneParam response_Single;
-    private CustomgameEvent_TwoParam response_Double;
-} */
-
 [System.Serializable]
 public class CustomgameEvent_NoParam : UnityEvent<Component> {}
 [System.Serializable]
@@ -19,10 +11,7 @@ public class CustomgameEvent_OneParam : UnityEvent<Component, object> {}
 public class CustomgameEvent_TwoParam : UnityEvent<Component, object, object> {}
 
 public class GameEventListener : MonoBehaviour
-{
-    // TO DO: Find a way to have multiple Events on one script
-    //public List<EventData> EventData = new List<EventData>{};
-    
+{   
     public GameEvent gameEvent;
 
     public CustomgameEvent_NoParam response_0;
