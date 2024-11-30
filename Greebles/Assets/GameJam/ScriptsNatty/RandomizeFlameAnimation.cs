@@ -1,23 +1,26 @@
 using UnityEngine;
 
-public class RandomizeFlameAnimation : MonoBehaviour
+namespace NattyStuff
 {
-    private Animator animator;
-    // Reference to the Animator component
-
-    void Start()
+    public class RandomizeFlameAnimation : MonoBehaviour
     {
-        animator = GetComponent<Animator>();
+        private Animator animator;
+        // Reference to the Animator component
 
-        if (animator == null)
+        void Start()
         {
-            Debug.LogError("Animator component not found on this GameObject.");
-            return;
+            animator = GetComponent<Animator>();
+
+            if (animator == null)
+            {
+                Debug.LogError("Animator component not found on this GameObject.");
+                return;
+            }
+
+
+            // Randomize the starting time of the animation
+            float randomStartTime = Random.Range(0f, 1f);
+            animator.Play("FlameAnimation", 0, randomStartTime); // Replace "FlameAnimation" with your animation's name
         }
-
-
-        // Randomize the starting time of the animation
-        float randomStartTime = Random.Range(0f, 1f);
-        animator.Play("FlameAnimation", 0, randomStartTime); // Replace "FlameAnimation" with your animation's name
     }
 }

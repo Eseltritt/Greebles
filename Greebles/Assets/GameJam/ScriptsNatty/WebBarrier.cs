@@ -1,134 +1,153 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class WebBarrier : MonoBehaviour
+
+namespace NattyStuff
 {
-    public GameObject intactWeb;  // Reference to the doorCobweb
-    public GameObject damagedWeb; // Reference to the damagedCobweb prefab
-    public int hitsToDestroy = 2;
-    public UnityEvent onWebDestroyed;
-
-    private int currentHits = 0;
-    private BoxCollider intactCollider;
-    private BoxCollider damagedCollider;
-
-    private void Awake()
+    public class WebBarrier : MonoBehaviour
     {
-        gameObject.tag = "WebBarrier";
-    }
+        public GameObject intactWeb;  // Reference to the doorCobweb
+        public GameObject damagedWeb; // Reference to the damagedCobweb prefab
+        public int hitsToDestroy = 2;
+        public UnityEvent onWebDestroyed;
 
+        private int currentHits = 0;
+        private BoxCollider intactCollider;
+        private BoxCollider damagedCollider;
 
-    private void OnEnable()
-    {
-        if (CatInteraction.Instance != null)
+        private void Awake()
         {
-            CatInteraction.Instance.RegisterWebBarrier(this);
-        }
-        else
-        {
-            Debug.LogError("CatInteraction instance not found!");
-        }
-        ResetWeb();
-    }
-
-    private void OnDisable()
-    {
-        if (CatInteraction.Instance != null)
-        {
-            CatInteraction.Instance.UnregisterWebBarrier(this);
-        }
-    }
-
-    private void Start()
-    {
-        // Get the BoxColliders from the intact and damaged web prefabs
-        intactCollider = intactWeb.GetComponent<BoxCollider>();
-        damagedCollider = damagedWeb.GetComponent<BoxCollider>();
-
-        if (intactCollider == null)
-        {
-            Debug.LogError("BoxCollider not found on intactWeb!");
-        }
-        if (damagedCollider == null)
-        {
-            Debug.LogError("BoxCollider not found on damagedWeb!");
+            gameObject.tag = "WebBarrier";
         }
 
-        ResetWeb();
-    }
 
-    public void TakeHit()
-    {
-        currentHits++;
-        UpdateWebState();
-
-        if (currentHits >= hitsToDestroy)
+        private void OnEnable()
         {
-            DestroyWeb();
+            if (CatInteraction.Instance != null)
+            {
+                CatInteraction.Instance.RegisterWebBarrier(this);
+            }
+            else
+            {
+                Debug.LogError("CatInteraction instance not found!");
+            }
+            ResetWeb();
         }
-    }
 
-    private void UpdateWebState()
-    {
-        Debug.Log($"UpdateWebState for {gameObject.name}: Hits = {currentHits}");
-        switch (currentHits)
+        private void OnDisable()
         {
-            case 0:
-                Debug.Log($"{gameObject.name}: Intact");
-                intactWeb.SetActive(true);
-                damagedWeb.SetActive(false);
-                if (intactCollider != null) intactCollider.enabled = true;
-                if (damagedCollider != null) damagedCollider.enabled = false;
-                break;
-            case 1:
-                Debug.Log($"{gameObject.name}: Damaged");
-                intactWeb.SetActive(false);
-                damagedWeb.SetActive(true);
-                if (intactCollider != null) intactCollider.enabled = false;
-                if (damagedCollider != null) damagedCollider.enabled = true;
-                break;
+            if (CatInteraction.Instance != null)
+            {
+                CatInteraction.Instance.UnregisterWebBarrier(this);
+            }
         }
-    }
 
-    private void DestroyWeb()
-    {
-        Debug.Log($"DestroyWeb for {gameObject.name}!");
-        intactWeb.SetActive(false);
-        damagedWeb.SetActive(false);
-        if (intactCollider != null) intactCollider.enabled = false;
-        if (damagedCollider != null) damagedCollider.enabled = false;
-        onWebDestroyed.Invoke();
-    }
-
-    public void ResetWeb()
-    {
-        currentHits = 0;
-        UpdateWebState();
-    }
-
-    public bool IsDestroyed()
-    {
-        return currentHits >= hitsToDestroy;
-    }
-
-    public BoxCollider GetActiveCollider()
-    {
-        return currentHits == 0 ? intactCollider : damagedCollider;
-    }
-
-    public Vector3 GetClosestPoint(Vector3 position)
-    {
-        BoxCollider activeCollider = GetActiveCollider();
-        if (activeCollider != null)
+        private void Start()
         {
-            return activeCollider.ClosestPoint(position);
-        }
-        return transform.position;
-    }
+            // Get the BoxColliders from the intact and damaged web prefabs
+            intactCollider = intactWeb.GetComponent<BoxCollider>();
+            damagedCollider = damagedWeb.GetComponent<BoxCollider>();
 
-    public bool IsPointInRange(Vector3 position, float range)
-    {
-        Vector3 closestPoint = GetClosestPoint(position);
-        return Vector3.Distance(position, closestPoint) <= range;
+            if (intactCollider == null)
+            {
+                Debug.LogError("BoxCollider not found on intactWeb!");
+            }
+            if (damagedCollider == null)
+            {
+                Debug.LogError("BoxCollider not found on damagedWeb!");
+            }
+
+            ResetWeb();
+        }
+
+        public void TakeHit()
+        {
+            currentHits++;
+            UpdateWebState();
+
+            if (currentHits >= hitsToDestroy)
+            {
+                DestroyWeb();
+            }
+        }
+
+        private void UpdateWebState()
+        {
+            Debug.Log($"UpdateWebState for {gameObject.name}: Hits = {currentHits}");
+            switch (currentHits)
+            {
+                case 0:
+                    Debug.Log($"{gameObject.name}: Intact");
+                    intactWeb.SetActive(true);
+                    damagedWeb.SetActive(false);
+                    if (intactCollider != null) intactCollider.enabled = true;
+                    if (damagedCollider != null) damagedCollider.enabled = false;
+                    break;
+                case 1:
+                    Debug.Log($"{gameObject.name}: Damaged");
+                    intactWeb.SetActive(false);
+                    damagedWeb.SetActive(true);
+                    if (intactCollider != null) intactCollider.enabled = false;
+                    if (damagedCollider != null) damagedCollider.enabled = true;
+                    break;
+            }
+        }
+
+        private void DestroyWeb()
+        {
+            Debug.Log($"DestroyWeb for {gameObject.name}!");
+            intactWeb.SetActive(false);
+            damagedWeb.SetActive(false);
+            if (intactCollider != null) intactCollider.enabled = false;
+            if (damagedCollider != null) damagedCollider.enabled = false;
+            onWebDestroyed.Invoke();
+        }
+
+        public void ResetWeb()
+        {
+            currentHits = 0;
+            UpdateWebState();
+        }
+
+        public bool IsDestroyed()
+        {
+            return currentHits >= hitsToDestroy;
+        }
+
+        public BoxCollider GetActiveCollider()
+        {
+            return currentHits == 0 ? intactCollider : damagedCollider;
+        }
+
+        public Vector3 GetClosestPoint(Vector3 position)
+        {
+            BoxCollider activeCollider = GetActiveCollider();
+            if (activeCollider != null)
+            {
+                return activeCollider.ClosestPoint(position);
+            }
+            return transform.position;
+        }
+
+        public bool IsPointInRange(Vector3 position, float range)
+        {
+            Vector3 closestPoint = GetClosestPoint(position);
+            return Vector3.Distance(position, closestPoint) <= range;
+        }
     }
 }
+
+
+/*
+using Natty;
+
+public class OtherScript : MonoBehaviour
+{
+    public MyClass myClass;
+
+    void Start()
+    {
+        myClass = GetComponent<MyClass>();
+    }
+}
+*/
