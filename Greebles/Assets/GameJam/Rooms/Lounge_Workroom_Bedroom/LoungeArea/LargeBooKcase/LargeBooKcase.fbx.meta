@@ -3,27 +3,7 @@ guid: 71d9254422db2024e8190acebf4a067c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cover.001
-    second: {fileID: 2100000, guid: 9342d89d4b7e22a44a06619ddb506352, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.005
-    second: {fileID: 2100000, guid: 71312cc7f1badb646802b0d4207104d7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Oak.001
-    second: {fileID: 2100000, guid: 4c992e7ed459a1247ad3ca5476c6bf02, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Paper.001
-    second: {fileID: 2100000, guid: 660142566447d4c4495b3bd27dfae4c6, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

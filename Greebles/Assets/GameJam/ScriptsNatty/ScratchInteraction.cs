@@ -2,115 +2,150 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-
-
-/*
-ScratchInteraction Setup Guide
-
-1. **Scene Setup**:
-   - Ensure a CatInteraction script is present on the cat GameObject.
-   - Identify scratchable objects (e.g., furniture, doors).
-
-2. **Applying ScratchInteraction**:
-   - Add this script to each scratchable object.
-   - The script automatically tags the object as "Scratchables".
-
-3. **Inspector Configuration**:
-   - Assign `scratchableObject` (initial state) and `scratchObjectInteracted` (scratched state).
-   - Set `useVisuals` to toggle visibility.
-   - Adjust `scratchesToComplete` for the number of scratches required.
-
-4. **Event Setup**:
-   - Configure `onScratchedOnce` and `onInteractionComplete` events in the Inspector to trigger animations or sounds.
-
-5. **Collider**:
-   - Ensure each scratchable object has a BoxCollider for interaction detection.
-
-6. **Testing**:
-   - Play the scene and use the cat to interact with scratchable objects.
-   - Check the console for event messages during testing.
-
-Note: This script works with CatInteraction to manage interactions with objects tagged "Scratchables".
-*/
-
-
-//tag scratchble interaction items "Scratchables" (and add ScratchInteraction script"
-public class ScratchInteraction : MonoBehaviour
+namespace NattyStuff
 {
-  
-    public GameObject scratchableObject;  // Reference to the intact object (optional)
-    public GameObject scratchObjectInteracted; // Reference to the damaged object (optional)
-    public bool useVisuals = true;   // - works for 2 objects that form a sequence such as intact door and a door with scratches, it will hide the game object previous and show the next (increments with currentScratches)
-    public int scratchesToComplete = 2;
-    public UnityEvent onScratchedOnce;
-    public UnityEvent onInteractionComplete;
-    public UnityEvent pickupItem;
 
-    private int currentScratches = 0;
-    private BoxCollider intactCollider;
-    private BoxCollider damagedCollider;
+    /*
+    ScratchInteraction Setup Guide
 
-    //testing
-    [SerializeField] private string onScratchedOnceMessage = "Object scratched once!";
-    [SerializeField] private string onInteractionCompleteMessage = "Interaction completed!";
+    1. **Scene Setup**:
+       - Ensure a CatInteraction script is present on the cat GameObject.
+       - Identify scratchable objects (e.g., furniture, doors).
+
+    2. **Applying ScratchInteraction**:
+       - Add this script to each scratchable object.
+       - The script automatically tags the object as "Scratchables".
+
+    3. **Inspector Configuration**:
+       - Assign `scratchableObject` (initial state) and `scratchObjectInteracted` (scratched state).
+       - Set `useVisuals` to toggle visibility.
+       - Adjust `scratchesToComplete` for the number of scratches required.
+
+    4. **Event Setup**:
+       - Configure `onScratchedOnce` and `onInteractionComplete` events in the Inspector to trigger animations or sounds.
+       eventrs can be chained in public fields or used in Oncomplete event fieils (how many taps which event animation plays)
+
+    5. **Collider**:
+       - Ensure each scratchable object has a BoxCollider for interaction detection.
+
+    6. **Testing**:
+       - Play the scene and use the cat to interact with scratchable objects.
+       - Check the console for event messages during testing.
+
+    Note: This script works with CatInteraction to manage interactions with objects tagged "Scratchables".
+    */
 
 
-    private void Awake()
+    //tag scratchble interaction items "Scratchables" (and add ScratchInteraction script"
+
+    public enum RevealedObjectReactionType
     {
-        gameObject.tag = "Scratchables";
+        Idle, //the object reveal by scratchy isnt very exciting....
+        Jump, //you interacted with something and found something scary
+        Hiss,//you opened a door
+        Boop//The "Boop" animation is played, followed by a potential chain of additional animations (example add animation script to trigger door open)).
     }
 
-    private void OnEnable()
+    public class ScratchInteraction : MonoBehaviour
     {
-        StartCoroutine(RegisterScratchableCoroutine());
-        ResetObject();
-    }
+        [TextArea(3, 5)]
+        public string testNote = "This class is a temporary placeholder for testing purposes. The actual scratch interaction functionality will be implemented by Ryan in a separate class.";
+    
 
-    private IEnumerator RegisterScratchableCoroutine()
-    {
-        yield return new WaitForSeconds(0.1f);
+    [Tooltip("Reference to the intact object in the sequence. If not used, the same object should  be used for both intact and damaged states.")]
+        public GameObject scratchableObject;  // Reference to the intact object (optional)
+        [Tooltip("The object that can be scratched or damaged in the sequence (useVisuals = true). If there's no damage sequence (useVisuals = false), this is the scratchableObject Gameobject added again, undamaged object")]
+        public GameObject scratchObjectInteracted;
+        [Tooltip("If enabled, the game object will be hidden/shown based on the `currentScratches` value. This works for sequences of objects, like an intact door and a scratched door.")]
+        public bool useVisuals = true;  // - works for 2 objects that form a sequence such as intact door and a door with scratches, it will hide the game object previous and show the next (increments with currentScratches)
+        [Tooltip("The number of times the object needs to be interacted with to complete the interaction.")]
+        public int scratchesToComplete = 2;
+        [Tooltip("Event triggered when the object is scratched once.")]
+        public UnityEvent onScratchedOnce;
+        [Tooltip("Event triggered when the interaction is completed (after all scratches).")]
+        public UnityEvent onInteractionComplete;
+        [Tooltip("Event triggered when an item is picked up as a result of the interaction.")]
+        public UnityEvent pickupItem;
 
-        if (CatInteraction.Instance != null)
+        private int currentScratches = 0;
+        private BoxCollider intactCollider;
+        private BoxCollider damagedCollider;
+
+        //testing
+        [SerializeField] private string onScratchedOnceMessage = "Object scratched once!";
+        [SerializeField] private string onInteractionCompleteMessage = "Interaction completed!";
+
+        [SerializeField]
+        [Tooltip("The kind of animation that's played when the object is revealed.")]
+        private RevealedObjectReactionType revealedObjectType;
+
+        public RevealedObjectReactionType RevealedObjectType
         {
-            CatInteraction.Instance.RegisterScratchable(this);
-            Debug.Log($"Registered ScratchInteraction for {gameObject.name}.");
+            get { return revealedObjectType; }
+            set { revealedObjectType = value; }
         }
-        else
+
+        public void SetRevealedObjectType(RevealedObjectReactionType type)
         {
-            Debug.LogError($"CatInteraction instance not found for {gameObject.name}!");
+            revealedObjectType = type;
         }
-    }
 
-    //private void OnEnable()
-    //{
-    //    if (CatInteraction.Instance != null)
-    //    {
-    //        CatInteraction.Instance.RegisterScratchable(this);
-    //        Debug.Log($"Registered ScratchInteraction for {gameObject.name}.");
-    //    }
-    //    else
-    //    {
-    //        Debug.LogError($"CatInteraction instance not found for {gameObject.name}!");
-    //    }
-    //    ResetObject();
-    //}
-
-    private void OnDisable()
-    {
-        if (CatInteraction.Instance != null)
+        private void Awake()
         {
-            CatInteraction.Instance.UnregisterScratchable(this);
+            gameObject.tag = "Scratchables";
         }
-    }
+
+        private void OnEnable()
+        {
+            StartCoroutine(RegisterScratchableCoroutine());
+            ResetObject();
+        }
+
+        private IEnumerator RegisterScratchableCoroutine()
+        {
+            yield return new WaitForSeconds(0.1f);
+
+            if (CatInteraction.Instance != null)
+            {
+                CatInteraction.Instance.RegisterScratchable(this);
+                Debug.Log($"Registered ScratchInteraction for {gameObject.name}.");
+            }
+            else
+            {
+                Debug.LogError($"CatInteraction instance not found for {gameObject.name}!");
+            }
+        }
+
+        //private void OnEnable()
+        //{
+        //    if (CatInteraction.Instance != null)
+        //    {
+        //        CatInteraction.Instance.RegisterScratchable(this);
+        //        Debug.Log($"Registered ScratchInteraction for {gameObject.name}.");
+        //    }
+        //    else
+        //    {
+        //        Debug.LogError($"CatInteraction instance not found for {gameObject.name}!");
+        //    }
+        //    ResetObject();
+        //}
+
+        private void OnDisable()
+        {
+            if (CatInteraction.Instance != null)
+            {
+                CatInteraction.Instance.UnregisterScratchable(this);
+            }
+        }
 
 
 
-    private void Start()
-    {
+        private void Start()
+        {
             //this can be the box,too drapes etc (or the images that you swap pout)
 
             intactCollider = scratchableObject?.GetComponent<BoxCollider>();
-            damagedCollider = scratchObjectInteracted?.GetComponent<BoxCollider>();  
+            damagedCollider = scratchObjectInteracted?.GetComponent<BoxCollider>();
 
             if (intactCollider == null && scratchableObject != null)
             {
@@ -121,164 +156,166 @@ public class ScratchInteraction : MonoBehaviour
                 Debug.LogWarning("BoxCollider not found on scratchImageDamaged!");
             }
 
-        ResetObject();
-    }
+            ResetObject();
+        }
 
 
-    public void Scratch()
-    {
-        currentScratches++;
-
-        if (currentScratches >= scratchesToComplete)
+        public void Scratch()
         {
-            CompleteInteraction();
-            DisplayEventMessage(onInteractionCompleteMessage);
+            currentScratches++;
 
-
-            if (currentScratches == 3)
+            if (currentScratches >= scratchesToComplete)
             {
-                if (pickupItem != null)
+                CompleteInteraction();
+                DisplayEventMessage(onInteractionCompleteMessage);
+
+
+                if (currentScratches == 3)
                 {
-                    pickupItem.Invoke();
-                    Debug.Log("Object attached to bone and event invoked.");
+                    if (pickupItem != null)
+                    {
+                        pickupItem.Invoke();
+                        Debug.Log("Object attached to bone and event invoked.");
+                    }
+                    else
+                    {
+                        Debug.LogWarning("pickupItem event is null. Please assign an event in the Inspector.");
+                    }
+                }
+            }
+            else
+            {
+                if (onScratchedOnce != null)
+                {
+                    onScratchedOnce.Invoke();
+                    Debug.Log("onScratchedOnce event invoked.");
                 }
                 else
                 {
-                    Debug.LogWarning("pickupItem event is null. Please assign an event in the Inspector.");
+                    Debug.LogWarning("onScratchedOnce event is null. Please assign an event in the Inspector.");
                 }
             }
+
+            UpdateObjectState();
         }
-        else
+
+
+
+        //testing
+        public void DisplayEventMessage(string message)
         {
-            if (onScratchedOnce != null)
+            Debug.Log($"[{gameObject.name}] Event Message: {message}");
+        }
+
+
+        public void SetEventMessage(bool isOnScratchedOnce, string message)
+        {
+            if (isOnScratchedOnce)
             {
-                onScratchedOnce.Invoke();
-                Debug.Log("onScratchedOnce event invoked.");
+                onScratchedOnceMessage = message;
             }
             else
             {
-                Debug.LogWarning("onScratchedOnce event is null. Please assign an event in the Inspector.");
+                onInteractionCompleteMessage = message;
             }
         }
 
-        UpdateObjectState();
-    }
-
-
-
-    //testing
-    public void DisplayEventMessage(string message)
-    {
-        Debug.Log($"[{gameObject.name}] Event Message: {message}");
-    }
-
-
-    public void SetEventMessage(bool isOnScratchedOnce, string message)
-    {
-        if (isOnScratchedOnce)
+        private void CompleteInteraction()
         {
-            onScratchedOnceMessage = message;
+            Debug.Log($"Interaction completed for {gameObject.name}!");
+            onInteractionComplete.Invoke(); // Trigger completion event
+            DisplayEventMessage(onInteractionCompleteMessage); // Log message
         }
-        else
+
+        private void UpdateObjectState()
         {
-            onInteractionCompleteMessage = message;
-        }
-    }
+            Debug.Log($"UpdateObjectState for {gameObject.name}: Scratches = {currentScratches}");
 
-    private void CompleteInteraction()
-    {
-        Debug.Log($"Interaction completed for {gameObject.name}!");
-        onInteractionComplete.Invoke(); // Trigger completion event
-        DisplayEventMessage(onInteractionCompleteMessage); // Log message
-    }
-
-    private void UpdateObjectState()
-    {
-        Debug.Log($"UpdateObjectState for {gameObject.name}: Scratches = {currentScratches}");
-
-        if (useVisuals)
-        {
-            UpdateVisuals(); // Call to update visuals based on current scratches, if applicable
-        }
-    }
-
-    public void ResetObject()
-    {
-        currentScratches = 0;
-        UpdateObjectState();
-    }
-
-
-    public bool IsInteractionComplete()
-    {
-        return currentScratches >= scratchesToComplete;
-    }
-
-    public BoxCollider GetActiveCollider()
-    {
-        return currentScratches == 0 ? intactCollider : damagedCollider;
-    }
-
-    public Vector3 GetClosestPoint(Vector3 position)
-    {
-        BoxCollider activeCollider = GetActiveCollider();
-        if (activeCollider != null)
-        {
-            return activeCollider.ClosestPoint(position);
-        }
-        return transform.position;
-    }
-
-    public bool IsPointInRange(Vector3 position, float range)
-    {
-        Vector3 closestPoint = GetClosestPoint(position);
-        return Vector3.Distance(position, closestPoint) <= range;
-    }
-
-    private void UpdateVisuals()
-    {
-        if (useVisuals)
-        {
-            Debug.Log("Updating visuals...");
-            Debug.Log("Current scratch level: " + currentScratches);
-
-            // Check if objects are the same before switch statement somebody might have forgotten to turn the bool off!
-            if (scratchableObject != scratchObjectInteracted)
+            if (useVisuals)
             {
-                switch (currentScratches)
+                UpdateVisuals(); // Call to update visuals based on current scratches, if applicable
+            }
+        }
+
+        public void ResetObject()
+        {
+            currentScratches = 0;
+            UpdateObjectState();
+        }
+
+
+        public bool IsInteractionComplete()
+        {
+            return currentScratches >= scratchesToComplete;
+        }
+
+        public BoxCollider GetActiveCollider()
+        {
+            return currentScratches == 0 ? intactCollider : damagedCollider;
+        }
+
+        public Vector3 GetClosestPoint(Vector3 position)
+        {
+            BoxCollider activeCollider = GetActiveCollider();
+            if (activeCollider != null)
+            {
+                return activeCollider.ClosestPoint(position);
+            }
+            return transform.position;
+        }
+
+        public bool IsPointInRange(Vector3 position, float range)
+        {
+            Vector3 closestPoint = GetClosestPoint(position);
+            return Vector3.Distance(position, closestPoint) <= range;
+        }
+
+        private void UpdateVisuals()
+        {
+            if (useVisuals)
+            {
+                Debug.Log("Updating visuals...");
+                Debug.Log("Current scratch level: " + currentScratches);
+
+                // Check if objects are the same before switch statement somebody might have forgotten to turn the bool off!
+                if (scratchableObject != scratchObjectInteracted)
                 {
-                    case 0:
-                        Debug.Log("Showing initial state");
-                        scratchableObject.SetActive(true);
-                        scratchObjectInteracted.SetActive(false);
-                        break;
-                    case 1:
-                        Debug.Log("Showing first damaged state");
-                        scratchableObject.SetActive(false);
-                        scratchObjectInteracted.SetActive(true);
-                        break;
-                        // Add more cases for additional damage states if needed
+                    switch (currentScratches)
+                    {
+                        case 0:
+                            Debug.Log("Showing initial state");
+                            scratchableObject.SetActive(true);
+                            scratchObjectInteracted.SetActive(false);
+                            break;
+                        case 1:
+                            Debug.Log("Showing first damaged state");
+                            scratchableObject.SetActive(false);
+                            scratchObjectInteracted.SetActive(true);
+                            break;
+                            // Add more cases for additional damage states if needed
+                    }
                 }
-            }
-            else
-            {
-                Debug.LogError("Error: scratchableObject and scratchObjectInteracted are the same object and not a sequence - skipping use sequential visuals to show interaction or damage.");
-            }
+                else
+                {
+                    Debug.LogError($"Error: scratchableObject and scratchObjectInteracted are the same object and not a sequence - skipping use sequential visuals to show interaction or damage. Object: {gameObject.name}");
+                }
 
 
-            // Add more cases for additional damage states if needed
-            // For example, for a third damage state:
-            // case 2:
-            //     Debug.Log("Showing second damaged state");
-            //     heavilyDamagedObject.SetActive(true);
-            //     scratchableObject.SetActive(false);
-            //     scratchObjectInteracted.SetActive(false);
-            //     break;
-        
+                // Add more cases for additional damage states if needed
+                // For example, for a third damage state:
+                // case 2:
+                //     Debug.Log("Showing second damaged state");
+                //     heavilyDamagedObject.SetActive(true);
+                //     scratchableObject.SetActive(false);
+                //     scratchObjectInteracted.SetActive(false);
+                //     break;
+
+            }
         }
+
+
+
     }
-
-
 }
 
 
