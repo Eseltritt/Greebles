@@ -19,11 +19,11 @@ public class Human : NavAgent
 
     public Transform InteractableHoldTransform;
 
-    private HumanHealth humanHealth;
+    /* private HumanHealth humanHealth; */
     private int startingHealth;
     private int health;
 
-    private float speed;
+    [SerializeField]private float speed;
     public float maxSpeedReduction = 0.5f;
 
     [SerializeField] private Animator _animator;
@@ -33,8 +33,8 @@ public class Human : NavAgent
         base.Start();
 
         speed = navSpeed;
-        humanHealth = GetComponent<HumanHealth>();
-        startingHealth = humanHealth.startingHealth;
+        /* humanHealth = GetComponent<HumanHealth>(); */
+        startingHealth = HumanHealth.instance.startingHealth;
         health = startingHealth;
 
         GetDefaultRoomTargets();
@@ -103,22 +103,15 @@ public class Human : NavAgent
         }
     }
 
-    public void OnHumanHealthChanged(Component sender, object value)
+    public void OnHumanHealthUpdate(Component sender, object value)
     {
-        Debug.Log("health Update");
         if(sender is HumanHealth && value is int)
         {
-            Debug.Log("human health Update");
             health = (int)value;
-
-            float speedReductFraction = 1 / startingHealth * health;
-            Debug.Log("speedFraction " + speedReductFraction);
-
-            float reductionValue = maxSpeedReduction + (1 - maxSpeedReduction) * speedReductFraction;
-            Debug.Log("speedfraction reduction " + reductionValue);
-
+            float healthFraction = (float)health / startingHealth;
+            float reductionValue = maxSpeedReduction + (1 - maxSpeedReduction) * healthFraction;
             
-            navSpeed = speed - reductionValue;
+            navSpeed = speed * reductionValue;
         }
     }
 }

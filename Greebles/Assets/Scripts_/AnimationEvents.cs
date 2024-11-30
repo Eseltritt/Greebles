@@ -6,7 +6,6 @@ public class AnimationEvents : MonoBehaviour
 
     public void AttackCompleted()
     {
-        Debug.Log("attacked");
         OnHumanHealthChanged?.Raise_SingleParam(this, HumanHealthChangedValue.Dropped);
     }
 }

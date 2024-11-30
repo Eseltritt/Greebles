@@ -8,11 +8,25 @@ public enum HumanHealthChangedValue
 
 public class HumanHealth : MonoBehaviour
 {
+    public static HumanHealth instance;
     public int startingHealth = 10;
     public int CurrentHealth;
-    public float regenerateHealthRate = 3;
+    public float regenerateHealthRate;
+    private bool _isRegenerating = false;
 
     public GameEvent OnHumaneHealthUpdate;
+
+    private void OnEnable()
+    {
+        if (instance == null){
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }         
+    }
 
     private void Start()
     {
@@ -24,23 +38,40 @@ public class HumanHealth : MonoBehaviour
         if (sender is AnimationEvents && value is HumanHealthChangedValue)
         {
             if ((HumanHealthChangedValue)value == HumanHealthChangedValue.Dropped)
-                CurrentHealth --;
+            {
+                if(CurrentHealth > 0)
+                {
+                    CurrentHealth --;
+                    OnHumaneHealthUpdate?.Raise_SingleParam(this, CurrentHealth);
+                }
+            }
             else
-                CurrentHealth ++;
+            {
+                if(CurrentHealth < startingHealth)
+                {
+                    CurrentHealth ++;
+                    OnHumaneHealthUpdate?.Raise_SingleParam(this, CurrentHealth);
+                }
+            }
 
-            OnHumaneHealthUpdate?.Raise_SingleParam(this, CurrentHealth);
+            if (CurrentHealth < startingHealth && !_isRegenerating)
+            {
+                InvokeRepeating("RegenerateHealth", regenerateHealthRate, regenerateHealthRate);
+                _isRegenerating = true;
+            }
         }
-
-        if (CurrentHealth < startingHealth)
-            InvokeRepeating("RegenerateHealth", regenerateHealthRate, regenerateHealthRate);
-        else
-            CancelInvoke("RegenerateHealth");
-
     }
 
     private void RegenerateHealth()
     {
-        if (CurrentHealth < startingHealth)
-            CurrentHealth ++;
+        CurrentHealth ++;
+        OnHumaneHealthUpdate?.Raise_SingleParam(this, CurrentHealth);
+
+        if (CurrentHealth == startingHealth)
+        {
+            CancelInvoke("RegenerateHealth");
+            _isRegenerating = false;
+        }
+            
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GreeblesAnimationController : BasicAnimator
 {
-    [SerializeField] private GameEvent OnHumanHealthChanged;
+    
 
     // Sends Attack
     public void StartAttack(){
@@ -17,9 +17,9 @@ public class GreeblesAnimationController : BasicAnimator
         SetAnimatorBool("Attacking", false);
     }
 
-    public void AttackCompleted()
+    /* public void AttackCompleted()
     {
         Debug.Log("attacked");
         OnHumanHealthChanged?.Raise_SingleParam(this, HumanHealthChangedValue.Dropped);
-    }
+    } */
 }
