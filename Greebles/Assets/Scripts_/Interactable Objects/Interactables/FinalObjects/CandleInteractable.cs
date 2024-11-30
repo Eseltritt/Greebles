@@ -16,8 +16,9 @@ public class CandleInteractable : InteractableObject, IHumanInteractable
     public bool IsMisplaceable { get; set; } = true;
     public Vector3 InitialPosition { get; set; }
     public Quaternion InitialRotation { get; set; }
+    private GameObject player;
 
-    private Vector3 forceDirection = new Vector3(5,3,0); // TO DO: Replace with vector dependant on cat paw strike direction
+    public float force = 5; // TO DO: Replace with vector dependant on cat paw strike direction
 
     #region Init
 
@@ -37,6 +38,8 @@ public class CandleInteractable : InteractableObject, IHumanInteractable
         gameObject.tag = "HitObject";
 
         ToBeCorrected = false;
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     #endregion
@@ -45,13 +48,14 @@ public class CandleInteractable : InteractableObject, IHumanInteractable
 
     public override void Catinteraction()
     {
+        transform.LookAt(player.transform);
         AddForce();
-
+        
         ToBeCorrected = true;
     }
 
     private void AddForce(){
-        _rigidBody.AddForce(forceDirection, ForceMode.VelocityChange);
+        _rigidBody.AddForce(transform.right * force, ForceMode.VelocityChange);
         OnHitObjectMisplaced?.Raise_WithoutParam(this);
     }
 

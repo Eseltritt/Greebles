@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interactionType: 2
   OnHitObjectMisplaced: {fileID: 11400000, guid: 971d99ee6100af74a9c5952c4217a84d, type: 2}
+  force: 2
 --- !u!54 &6650778565779430246
 Rigidbody:
   m_ObjectHideFlags: 0

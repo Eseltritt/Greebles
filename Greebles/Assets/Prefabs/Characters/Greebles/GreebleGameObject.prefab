@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1430032145977024270}
   - component: {fileID: 5237580869520150214}
-  - component: {fileID: 7315563474503138783}
   - component: {fileID: 264831036983744056}
   - component: {fileID: 1866885288261906080}
   - component: {fileID: 5518917410424438593}
   - component: {fileID: 7961398592458826083}
+  - component: {fileID: 3947034050807875213}
   m_Layer: 0
   m_Name: GreebleGameObject
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.81, y: 0.51, z: -30.470001}
-  m_LocalScale: {x: 1.0007, y: 1, z: 1}
+  m_LocalScale: {x: 0.080830544, y: 0.080774, z: 0.080774}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7624292410923834953}
@@ -46,19 +46,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4305898814530098021}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7315563474503138783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4305898814530098021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f3724bbf5d2ff428fe7b114d29cbed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactionType: 2
 --- !u!195 &264831036983744056
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -93,10 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa43fac9b1265c940abe4fb9e427de11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  attackRange: 20
+  navStoppingDistance: 0.5
+  navSpeed: 0.25
+  attackRange: 2
   attackRate: 3
   positionUpdateTime: 0.5
+  OnHumanAttacked: {fileID: 0}
   animationController: {fileID: 5518917410424438593}
 --- !u!114 &5518917410424438593
 MonoBehaviour:
@@ -111,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3324076959715778086}
-  Event_GreebleAttack: {fileID: 11400000, guid: 7d1794d1f679ba449b7c68775b804912, type: 2}
 --- !u!135 &7961398592458826083
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -133,6 +121,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.02
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3947034050807875213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4305898814530098021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b400499db8cfe4e82eedcf9d92961c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionType: 2
+  isDead: 0
+  deathAnim: {fileID: 6740418933961095395, guid: f898b7ad0e2a39b439af8b9befb7b0fe, type: 3}
+  sizePercentage: 1
+  shrinkTime: 5
 --- !u!1001 &8552887656863703953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -196,13 +201,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1456011934310410082, guid: 4a8cc2fe2c003544b8b9c07ce24936f9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5596718759124639946}
   m_SourcePrefab: {fileID: 100100000, guid: 4a8cc2fe2c003544b8b9c07ce24936f9, type: 3}
 --- !u!95 &3324076959715778086 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6381750618599751095, guid: 4a8cc2fe2c003544b8b9c07ce24936f9, type: 3}
   m_PrefabInstance: {fileID: 8552887656863703953}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7099147603494962419 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1456011934310410082, guid: 4a8cc2fe2c003544b8b9c07ce24936f9, type: 3}
+  m_PrefabInstance: {fileID: 8552887656863703953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5596718759124639946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099147603494962419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c50e69b8e0ed1f04daa7adb45f66b032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHumanHealthChanged: {fileID: 11400000, guid: 7d1794d1f679ba449b7c68775b804912, type: 2}
 --- !u!4 &7624292410923834953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2269563039554305496, guid: 4a8cc2fe2c003544b8b9c07ce24936f9, type: 3}
