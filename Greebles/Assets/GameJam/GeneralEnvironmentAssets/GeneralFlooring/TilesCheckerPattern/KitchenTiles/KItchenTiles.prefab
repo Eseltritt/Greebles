@@ -1,0 +1,1524 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7268843199709019742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4336348720226153584}
+  m_Layer: 0
+  m_Name: KItchenTiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4336348720226153584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7268843199709019742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.88, y: 0, z: -3.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5330373060451937050}
+  - {fileID: 6005540019077487110}
+  - {fileID: 7333618407166380241}
+  - {fileID: 4697059174405361210}
+  - {fileID: 8859619762699854004}
+  - {fileID: 3249801711729635002}
+  - {fileID: 8706609415249293212}
+  - {fileID: 7143307447955056268}
+  - {fileID: 7986244526582574939}
+  - {fileID: 2355051399022114697}
+  - {fileID: 1595466945825252774}
+  - {fileID: 8528586340082128927}
+  - {fileID: 9174368780793565408}
+  - {fileID: 4480451389580699395}
+  - {fileID: 6466265217180335494}
+  - {fileID: 1291177741166607460}
+  - {fileID: 9156712403186693814}
+  - {fileID: 1368461610156066567}
+  - {fileID: 2953596391696494494}
+  - {fileID: 5191449060252644134}
+  - {fileID: 4604640491121784745}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1801131291224976093
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &1368461610156066567 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 1801131291224976093}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2010866686197158334
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &1291177741166607460 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 2010866686197158334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2028620341002635388
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.3199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &1595466945825252774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 2028620341002635388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2521575491373318724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1740003
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &2953596391696494494 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 2521575491373318724}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2817769816835441504
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &3249801711729635002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 2817769816835441504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3075383557941451347
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &2355051399022114697 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 3075383557941451347}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3760194547197299417
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &4480451389580699395 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 3760194547197299417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3883756445545732723
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &4604640491121784745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 3883756445545732723}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4758225227605237500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1740003
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &5191449060252644134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 4758225227605237500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4898348245142341312
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.3199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &5330373060451937050 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 4898348245142341312}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5416820615891477472
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &4697059174405361210 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 5416820615891477472}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6034803970792083548
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &6466265217180335494 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 6034803970792083548}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6436999687568570332
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &6005540019077487110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 6436999687568570332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7266541359338488449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.3199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &7986244526582574939 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 7266541359338488449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7575344357793975126
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1740003
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &7143307447955056268 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 7575344357793975126}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8053870851863979275
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.3199997
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &7333618407166380241 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 8053870851863979275}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8138170500126068078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &8859619762699854004 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 8138170500126068078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8275136623630598726
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &8706609415249293212 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 8275136623630598726}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8435253796238105452
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &9156712403186693814 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 8435253796238105452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8454030574157364538
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.166
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &9174368780793565408 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 8454030574157364538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8960060851869103557
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4336348720226153584}
+    m_Modifications:
+    - target: {fileID: 92595804717643616, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_Name
+      value: LivingroomTiles (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2883598a9e0f2415fa286fa5d8883ce6, type: 2}
+    - target: {fileID: 1893775828019140277, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 371f3b697661f48698be3bcb16b2b7bd, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+--- !u!4 &8528586340082128927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 721464106687835610, guid: aee789a66b8be1f4fb26898980ae8f0c, type: 3}
+  m_PrefabInstance: {fileID: 8960060851869103557}
+  m_PrefabAsset: {fileID: 0}
