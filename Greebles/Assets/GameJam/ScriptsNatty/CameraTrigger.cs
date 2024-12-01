@@ -10,29 +10,14 @@ namespace NattyStuff
         public CinemachineVirtualCamera targetCamera;
         public CinemachineVirtualCamera mainCamera;
         private CinemachineVirtualCamera _currentActiveCamera;
+        private CameraManager cameraManager;
+
         public bool hideAtStart = true;
-
-
-        private void OnEnable()
-        {
-            if (mainCamera.Priority > targetCamera.Priority)
-            {
-                _currentActiveCamera = mainCamera;
-            }
-            else
-            {
-                _currentActiveCamera = targetCamera;
-            }
-        }
 
 
         private void Start()
         {
-            //start main cam and hilight it in on draw gizmo
-            mainCamera.Priority = 10;
-            targetCamera.Priority = 0;
-            _currentActiveCamera = mainCamera;
-
+           
             BoxCollider boxCollider = GetComponent<BoxCollider>();
 
             if (boxCollider != null)
@@ -53,7 +38,7 @@ namespace NattyStuff
                 Debug.LogWarning("MeshRenderer component not found on this GameObject.");
             }
 
-           
+
 
 
             if (hideAtStart)
@@ -70,28 +55,26 @@ namespace NattyStuff
                 }
             }
 
+
+            cameraManager = GameObject.FindWithTag("CameraManager").GetComponent<CameraManager>();
+
         }
-
-
-
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player") && cameraManager != null)
             {
-                targetCamera.Priority = 10;
-                mainCamera.Priority = 0;
-                _currentActiveCamera = targetCamera;
+                cameraManager.ActivateCamera(targetCamera);
+                Debug.Log("Activated camera: " + targetCamera.name);
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player") && cameraManager != null)
             {
-                mainCamera.Priority = 10;
-                targetCamera.Priority = 0;
-                _currentActiveCamera = mainCamera;
+                cameraManager.ActivateDefaultCamera();
+                Debug.Log("Activated default camera: " + cameraManager.defaultCamera.name);
             }
         }
 
