@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClosetInteractable : InteractableObject, IHumanInteractable
+public class ClosetInteractable_2 : InteractableObject, IHumanInteractable
 {
     [SerializeField] private InteractableType _interactionType;
     public override InteractableType interactionType => _interactionType;
