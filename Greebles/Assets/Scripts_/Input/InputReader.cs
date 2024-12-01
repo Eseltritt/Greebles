@@ -78,7 +78,6 @@ public class InputReader : MonoBehaviour, GameInput.IGameplayActions, GameInput.
             RayCastMouseHit();
             if (context.interaction is MultiTapInteraction){
                     onGameInput_DoubleClick?.Invoke(_targetInteractable, _targetPosition);
-                    Debug.Log("target mouse = " + _targetInteractable);
                 }else
                 {
                     onGameInput_SingleClick?.Invoke(_targetInteractable, _targetPosition);
