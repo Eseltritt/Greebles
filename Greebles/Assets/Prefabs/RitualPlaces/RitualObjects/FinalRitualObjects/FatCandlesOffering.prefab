@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -164761818749699956}
   - component: {fileID: 6644180533979225562}
   - component: {fileID: 2558222340860526115}
+  - component: {fileID: -4710211600386212952}
   m_Layer: 0
   m_Name: FatCandlesOffering
   m_TagString: Untagged
@@ -101,6 +102,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-4710211600386212952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968140349876452958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c7100cce408b7545a7659bbb7e1894c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ritualObjectType: 5
 --- !u!1001 &2187873742447376755
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109,6 +123,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1962869804192640051}
     m_Modifications:
+    - target: {fileID: 7511465887039460154, guid: 355b0f077a0311e4b83e3b1b0a8344f0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 29c883e67ee9cc04483151c00d52449d, type: 2}
     - target: {fileID: 8300750667525151016, guid: 355b0f077a0311e4b83e3b1b0a8344f0, type: 3}
       propertyPath: m_Name
       value: Flame
@@ -171,6 +189,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1962869804192640051}
     m_Modifications:
+    - target: {fileID: 7511465887039460154, guid: 355b0f077a0311e4b83e3b1b0a8344f0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 29c883e67ee9cc04483151c00d52449d, type: 2}
     - target: {fileID: 8300750667525151016, guid: 355b0f077a0311e4b83e3b1b0a8344f0, type: 3}
       propertyPath: m_Name
       value: Flame (1)
@@ -233,6 +255,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1962869804192640051}
     m_Modifications:
+    - target: {fileID: -9004130467049736007, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
+    - target: {fileID: -9004130467049736007, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
+    - target: {fileID: -9004130467049736007, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
     - target: {fileID: -8679921383154817045, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -273,10 +307,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -1169964434047681953, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
+    - target: {fileID: -1169964434047681953, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
+    - target: {fileID: -1169964434047681953, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
     - target: {fileID: 919132149155446097, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
       propertyPath: m_Name
       value: CandlesFat
       objectReference: {fileID: 0}
+    - target: {fileID: 4614270752669481402, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
+    - target: {fileID: 4614270752669481402, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
+    - target: {fileID: 4614270752669481402, guid: ea1e3853ad832e246851d4ca7cfdfeb1, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943738e13eb6d349bf31bbc0ecf83e6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -295,6 +353,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1962869804192640051}
     m_Modifications:
+    - target: {fileID: 7511465887039460154, guid: 355b0f077a0311e4b83e3b1b0a8344f0, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 29c883e67ee9cc04483151c00d52449d, type: 2}
     - target: {fileID: 8300750667525151016, guid: 355b0f077a0311e4b83e3b1b0a8344f0, type: 3}
       propertyPath: m_Name
       value: Flame (2)

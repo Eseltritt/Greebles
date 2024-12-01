@@ -1,4 +1,5 @@
 using System.Data.Common;
+using NUnit.Framework.Constraints;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -12,6 +13,9 @@ public class PlayerBehaviour : NavAgent
 
     private float _normalSpeed;
     private float _runSpeed;
+
+    public GameObject _heldObject { get; private set; }
+    public Transform holdObjectTransform;
 
     #region Init
 
@@ -116,5 +120,24 @@ public class PlayerBehaviour : NavAgent
     {
         _targetInteractable.Catinteraction();
         NavHasTarget = false;
+    }
+
+    public void OnObjectPickedUp(Component sender, object pickedUp) //pickedUp should be a bool that determines if the object is picked up or dropped
+    {
+        if (pickedUp is bool)
+        {
+            if ((bool)pickedUp)
+            {
+                _heldObject = sender.gameObject;
+            }else
+            {
+                _heldObject = null;
+            }
+        }
+    }
+
+    public GameObject CheckoutPayload()
+    {
+        return _heldObject;
     }
 }

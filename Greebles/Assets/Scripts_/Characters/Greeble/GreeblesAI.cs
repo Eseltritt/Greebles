@@ -11,8 +11,6 @@ public class GreeblesAI : NavAgent
 
     [SerializeField] float positionUpdateTime = 3;
 
-    public GameEvent OnHumanAttacked;
-
     // Follow Human
 
     [SerializeField] private GreeblesAnimationController animationController;
