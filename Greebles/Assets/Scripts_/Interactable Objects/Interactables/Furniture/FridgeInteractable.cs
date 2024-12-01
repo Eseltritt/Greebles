@@ -25,10 +25,8 @@ public class FridgeInteractable : InteractableObject, IHumanInteractable
 
     public override void Catinteraction()
     {
-        Debug.Log("cat interaction registered");
         if(isSlightlyOpened && !isFullyOpen)
         {
-            Debug.Log("fridge is open");
             animator.SetTrigger("Open");
             Invoke("SpawnItem", itemSpawnDelay);
         }
