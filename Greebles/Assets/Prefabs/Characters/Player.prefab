@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 8434383009155526113}
   - component: {fileID: 2394252317330031593}
   - component: {fileID: 1087596564511194742}
-  - component: {fileID: 4519855407610255647}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -146,76 +145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8af08eb6fe810d4194fb9cf95ba3c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  navStoppingDistance: 0.5
+  navStoppingDistance: 0.2
   navSpeed: 1
   _targetInteractable: {fileID: 0}
   animator: {fileID: 5020283441830157129}
-  holdObjectTransform: {fileID: 1736386342344762384}
---- !u!114 &4519855407610255647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2414449416016863358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987d323a2f1f4d443b40a9b586c73621, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: b21994d409161364daf6ba3333b29142, type: 2}
-  response_0:
-    m_PersistentCalls:
-      m_Calls: []
-  response_1:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1087596564511194742}
-        m_TargetAssemblyTypeName: PlayerBehaviour, Assembly-CSharp
-        m_MethodName: OnObjectPickedUp
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  response_2:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &4791600278217808420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1736386342344762384}
-  m_Layer: 0
-  m_Name: HoldTransform
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1736386342344762384
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4791600278217808420}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.44391423, y: -0.00075667776, z: 0.00004338525, w: 0.89606893}
-  m_LocalPosition: {x: -0.002, y: 0.012, z: 0.05}
-  m_LocalScale: {x: 0.12471326, y: 0.12471324, z: 0.12471328}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 9074607332102343674}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &587717498476081863
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,10 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 8487181629036378429, guid: f8322787d2ca2274f8fe575db9601dc4, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1736386342344762384}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f8322787d2ca2274f8fe575db9601dc4, type: 3}
       insertIndex: -1
@@ -321,10 +251,5 @@ Animator:
 --- !u!4 &1129634458388911404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f8322787d2ca2274f8fe575db9601dc4, type: 3}
-  m_PrefabInstance: {fileID: 587717498476081863}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &9074607332102343674 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8487181629036378429, guid: f8322787d2ca2274f8fe575db9601dc4, type: 3}
   m_PrefabInstance: {fileID: 587717498476081863}
   m_PrefabAsset: {fileID: 0}
